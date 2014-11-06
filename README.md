@@ -17,6 +17,12 @@ An evon encoding is a JS expression that's executed with eval() to restore the o
 
 Unlike JSON, it supports the full variety of JS objects, including circular references, multiple references to the same object, prototypes, constructors and their parameters, various types of untruthyness and sparseness, etc. 
 
+For instance:
+
+```_(_(_(h[0]=new Horse(2),'stable',2),'name',"dobbin"),'bettingOn',h[0])```
+
+encodes a derived object which needs to be constructed with the parameter 2 to cause side effects outside of the object with three properties one of which is a reference to the object itself.
+
 It's surprisingly fast and will form the basis of the next version of rhaboo.
 
 parunpar
