@@ -8,6 +8,17 @@ Has extensive automatically generated tests.
 
 Details at http://rhaboo.org
  
+evon
+----
+
+JSON-like serialiser but much more accurate and pretty fast. 
+
+An evon encoding is a JS expression that's executed with eval() to restore the object. 
+
+Unlike JSON, it supports the full variety of JS objects, including circular references, multiple references to the same object, prototypes, constructors and their parameters, various types of untruthyness and sparseness, etc. 
+
+It's surprisingly fast and will form the basis of the next version of rhaboo.
+
 parunpar
 --------
 
@@ -17,26 +28,19 @@ Use this when you know exactly what you're encoding and how the serialised versi
 
 A parunpar includes both the encoder and the decoder for something. This library provides combinators for building bigger parunpars out of smaller ones.
 
+This is the basis of the current rhaboo, but will probably not be used in the evon-based version.
+
 ajon
 ----
 
-Spun out of rhaboo tests. JSON-like serialiser but more accurate. Not fast at all.
+JSON-like serialiser but more accurate. Not fast at all.
 
-evon
-----
-
-More interesting JSON-like serialiser. 
-
-An evon encoding is a JS expression that's executed with eval() to restore the object. 
-
-Unlike JSON, it supports the full variety of JS objects, including circular references, multiple references to the same object, prototypes, constructors and their parameters, various types of untruthyness, etc. 
-
-It's surprisingly fast and will form the basis of the next version of rhaboo.
+Used in rhaboo auto-generated test scripts to describe expected results. 
 
 obtotype
 --------
 
-WIP repo about uses of JS prototypes other than inheritance.
+Research about uses of JS prototypes other than inheritance. Very WIP.
 
 digilife
 --------
