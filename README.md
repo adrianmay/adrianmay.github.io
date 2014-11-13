@@ -1,4 +1,9 @@
 
+prontt
+------
+
+Web server in SWI-Prolog. Does project planning and outputs a Gantt chart. Demonstrates that Prolog is a rather nice language for web development, especially if there are logical rules involved.
+
 rhaboo
 ------
 
