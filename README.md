@@ -1,4 +1,14 @@
 
+cgroups-webapp
+--------------
+
+Haskell-based web app for manipulating cgroups in nixos. 
+
+nixpkgs
+-------
+
+Clone of nixos package repo for deploying the above
+
 prontt
 ------
 
