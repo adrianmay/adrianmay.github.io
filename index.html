@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
 
 <title>Adrian May : Curriculum Vitae</title>  
@@ -10,6 +11,7 @@ h3                  { font-variant:small-caps; font-size: x-large;}
 .button             { color: #808080; text-align: center; font-variant: small-caps; font-size: small; }
 .box                { text-align:center; background-color:#DDFFFF; border: 2px solid grey; margin-left:5%; margin-right:5%; padding: 10px;}
 .boxlet             { text-align:left; background-color:#DDFFFF; border: 2px solid grey; margin-left:5%; margin-right:5%; padding: 2px; margin-bottom:7px;}
+span.code           { font-family: monospace; padding: 0 10px; }
 table.menu          { border-spacing: 10px; width:90%; margin-left:5%; margin-right:5%; }
 table.menu tr       { width:100%; }
 table.boxlet tr td  { text-align: left; }
@@ -44,6 +46,12 @@ var root = {
     Driver: { en: "Full British car license", cn: "英國和台灣機車和汽車駕照"},
   },
   References : [ {
+    Name: "Noah Halford",
+    Company: "tiko Energy Solutions AG",
+    Relationship: { en: "Former Team Leader", cn: "前任經理"} ,
+    Contact: "TBC" 
+  },
+  {
     Name: "Andrew Handley-Marsh",
     Company: "Tracsis PLC",
     Relationship: { en: "Former Team Leader", cn: "前任經理"} ,
@@ -55,7 +63,15 @@ var root = {
     Relationship: "Former Sector Lead",
     Contact: "robertsaraka@yahoo.com" },
   ],
-    Introduction : "As a leader of software developers I practise the following values:<ul> <li> Base working culture on 'Engage for Success': staff will pursue company interests to the extent that they're empowered to.  <li> Estimate implementation times objectively by data mining ticket records and source control: only realistic estimates can reserve time for tech debt reduction.  <li> Only implement what is in the interests of both the supplier and the customer: negotiate hard for simple requirements.  <li> Curate the data model intensively to keep it concise and clearly understood by all.  <li> Keep code light and consider it disposable.  <li> Evolve beyond scrum. </ul> <p>This ethos is more fully described <a href='book/index.html'>here</a>.",
+    Introduction : `As a leader of software developers I'm guided by the following values:<ul>
+    <li> Base working culture on Employee Engagement principles.
+    <li> Estimate implementation times objectively by data mining ticket records and source control.
+    <li> Only implement what is in the interests of both the supplier and the customer: negotiate hard for simple requirements.
+    <li> Curate the data model intensively to keep it concise and clearly understood by all.  
+    <li> Be mindful of performance.
+    <li> Keep code light and consider it disposable.
+    <li> Evolve beyond scrum.
+    </ul>`,
   Education : {
     'Oxford University' : {
       en: "1988-91: B.A. Physics (Hons)",
@@ -69,12 +85,13 @@ var root = {
 
   },
   Skills : {
-		'Coordination': "Scrum PO, Tech Lead, Department Manager",
-    'Programming' : "Haskell, C/C++, Java, JS, Python, Bash etc, SQL, Forth, Prolog, OpenGL, Nasm", 
-    'Web' : "HTML5, JS, CSS3, jQuery, XSLT, LAMP, nginx, JSP, TCP/IP, Sockets",
-    'Configuration' : "Git, Mercurial, ClearCase, Perforce, Subversion, CVS",
-    'Hardware' : "PC, STB, Amazon EC2, Intel, 68k, ARM (inc M3), MSP430, PIC",
-    'OS' : "Linux, Android, Windows",
+		'Roles': "Coder, Tech Lead, Scrum PO, Department Manager",
+    'Programming' : "Haskell, C/C++, Java, Python, Bash etc, SQL, Forth, Prolog, OpenGL, Nasm", 
+    'Web' : "HTML5, JS, Node, CSS3, jQuery, XSLT, React, Angular, Vue",
+    'Configuration' : "Git(lab), Mercurial, ClearCase, Perforce, Subversion, CVS",
+    'OS' : "Linux, Nix, Android, Windows",
+    'Cloud': "AWS, Docker, Kubernetes, Argo, Thrift, Kafka, MQTT, Protobuf, Kibana, Grafana, Prometheus",
+    'Hardware' : "PC, STB, Intel, 68k, ARM (inc M3), MSP430, PIC",
     'Process' : "Scrum/SAFe, Jira, Confluence",
     Communication : {
       en: "Fluent English & German, some Mandarin and French.",
@@ -88,14 +105,23 @@ var root = {
       Sector: "Energy demand regulation",  
       Where: "Zürich, CH",
       Activities: "Haskell Development Contractor",
-      Technologies: "Haskell, Nix, Docker, Kubernetes, Kafka, Grafana, MQTT, Protobuf",
+      Technologies: "Haskell, Nix, Docker, Kubernetes, Kibana, Grafana, Prometheus, Thrift, Kafka, MQTT, Protobuf",
       From: [2022, 7],
       Achievements: [
-				"Fixed self-releasing memory leak in Kafka's Haskell bindings by manually instrumenting rdkafka",
-				"Built a generally useful HaXml wrapper to defang its numerous inconveniences",
-				"Wrote various apps for trading of energy demand regulation capacity"
+				"Fixed self-releasing memory leak in Kafka's Haskell bindings by manually instrumenting rdkafka.",
+				"Built a generally useful HaXml wrapper to defang its numerous inconveniences.",
+				"Wrote various apps and APIs for trading of energy demand regulation capacity.",
+        "Cleansed a sprawling database of its deadlock weaknesses.",  
+        "Designed a DSL to allow innovation of UI features without needing coordinated changes to the backend.",
+        "Re-engineered the database logging concept to be more generic and handle row deletions.",
+        "Retired the established <span class='code'>IO (Either String a)</span> pattern in favour of an acceptably rudimentary MTL stack.",
+        "Removed lots of partial functions.",  
+        "Argued against established reluctance to import thrift-generated types.",  
+        "Designed an anti-spoofing solution using EMQX ACLs.",
+        "Blamed the inefficiency of prometheus Z-testing on the lack of an online algorithm for exponentially weighted running mean and variance and found a suitable algorithm."  
 			],
-      Conclusion: { en: "Ongoing.", cn: "持續進行中"}, Long: ""
+      Long: "This was a one-year contract to cover a shortage of permanent Haskell coders.",  
+      Conclusion: "Enough coders had been recruited by the end of the contract."
     },
     {
       Who: "Tracsis PLC",
@@ -106,17 +132,17 @@ var root = {
       From: [2019, 3],
       To: [2022, 6],
       Achievements: [
-				"Promoted to team lead within a year",
-				"Rescued the most important customer account by working extreme overtime around Christmas",
-				"Rescued it again by kick-starting a catatonic project and leading it to timely completion",
-        "Dockerised the development environment",
-				"Developed tutorials for newcomers to Haskell",
-        "Successfully lobbied to sell simpler spec to customer",
-        "Several deep refactorings",
-				"Designed a system to predict ticket completion dates",
+				"Promoted to team lead within a year.",
+				"Rescued the most important customer account by working extreme overtime around Christmas.",
+				"Rescued it again by kick-starting a catatonic project and leading it to timely completion.",
+        "Dockerised the development environment.",
+				"Developed tutorials for newcomers to Haskell.",
+        "Successfully lobbied to sell simpler spec to customer.",
+        "Several deep refactorings.",
+				"Designed a system to predict ticket completion dates."
 			],
       Conclusion: { en: "Returned to my contracting roots", cn: "持續進行中"}, 
-        Long: "Having fallen in love with Haskell sometime around 2000 and used it for hobby and side projects at work ever since, I jumped at this chance to work not only full time with Haskell but also for a company that had the courage to adopt it. \
+      Long: "Having fallen in love with Haskell sometime around 2000 and used it for hobby and side projects at work ever since, I jumped at this chance to work not only full time with Haskell but also for a company that had the courage to adopt it. \
         <p>I learned a great deal from the exposure to a large, high-availability, web-based product (e.g. the sensitivity of performance issues in Haskell) but also retained my existing belief in minimalist coding and conciseness of data. My style has evolved into one where I try to get work done by the standard classes and avoid developing lock-in frameworks. This is a key point of the 1:1 tutorial series I developed for Haskell newcomers.\
         <p>The setup of Tracsis' development environment was a complex and barely reproducible procedure, so I wrote a docker-compose file to house all the auxilliary processes whilst the main web server continues to run on the host and is in any case made reproducible by stack.\
         <p>Due to the absence of any requirements gating process, the spec of our main product had become too complex for any dev or user to understand, thus presenting a serious threat to the long term maintainability of the product. In response, I doggedly pressed for a simpler concept to be agreed internally to be recommended to the customer after the first delivery in the new year, reaching consensus after a couple of months of presentations and consultations.\
@@ -151,7 +177,7 @@ var root = {
         { en: "Written the closest thing to transparent persistence of JS objects.", 
           cn: "寫出最接近JS objects 的 transparent persistence"}, ],
       Conclusion: "Needed a paid job.",
-			Long: "This library (<a href='https://web.archive.org/web/20221004064911/https://github.com/adrianmay/rhaboo'>https://github.com/adrianmay/rhaboo</a>) provides persistence for Javascript programmers with the minimum learning curve. The programmer declares ordinary JS objects with a certain constructor: <span style='font-family: courier;'>var mystore = new Rhaboo.Persistent('unique name')</span>, and these persist with almost no further action on the programmer's part. Nested objects and arrays are supported. The only discomfort for the programmer is that because one cannot override assignment to newly invented properties of a known object, i.e., one cannot change the behaviour of <span style='font-family: courier;'>a.b=c</span> if b is something new, these assignments must be performed with <span style='font-family: courier;'>a.write('b', c)</span> instead. The performance is excellent because it does not simply stringify and parse the entire persistent set as most such libraries do. <p>For another Javascript sample, see the source of this CV. <p>During this time I have also been negotiating my self-drafted patent on a browser and search engine with the USPTO. ", 
+			Long: "This library (<a href='https://github.com/adrianmay/rhaboo'>https://github.com/adrianmay/rhaboo</a>) provides persistence for Javascript programmers with the minimum learning curve. The programmer declares ordinary JS objects with a certain constructor: <span style='font-family: courier;'>var mystore = new Rhaboo.Persistent('unique name')</span>, and these persist with almost no further action on the programmer's part. Nested objects and arrays are supported. The only discomfort for the programmer is that because one cannot override assignment to newly invented properties of a known object, i.e., one cannot change the behaviour of <span style='font-family: courier;'>a.b=c</span> if b is something new, these assignments must be performed with <span style='font-family: courier;'>a.write('b', c)</span> instead. The performance is excellent because it does not simply stringify and parse the entire persistent set as most such libraries do. <p>For another Javascript sample, see the source of this CV. <p>During this time I have also been negotiating my self-drafted patent on a browser and search engine with the USPTO. ", 
     },
     {
       Who: "Quorve Media Ltd",
@@ -168,8 +194,8 @@ var root = {
           cn: "吸引數以千計的忠實使用者"} ],
       Conclusion: { en: "More apps planned when time allows.", cn: "時間若允許，會陸續完成計畫中的APP" },
       Long: {
-        en: "This is my own start-up writing mobile apps. The first product, a live wallpaper for Android called “Poolpaper”, can be previewed here: <br/>   <a href='https://web.archive.org/web/20221004064911/http://www.youtube.com/watch?v=h65P0QYTLIM&fmt=22'>http://www.youtube.com/watch?v=h65P0QYTLIM&fmt=22</a> <br/>and installed from: <br/>   <a href='https://web.archive.org/web/20221004064911/https://play.google.com/store/apps/details?id=com.quorve.android.poolpaper'>https://play.google.com/store/apps/details?id=com.quorve.android.poolpaper</a><br/> The business case is based on advertising on the pool walls and floor, and a paid version where the images can be customised. I perform all duties in this business. ", 
-        cn: "以下是我獨自設立的公司所設計的第一個手機應用程式。 第一個產品是Android系統裡互動桌布叫 “Poolpaper” 網址為: <br/>   <a href='https://web.archive.org/web/20221004064911/http://www.youtube.com/watch?v=h65P0QYTLIM&fmt=22'>http://www.youtube.com/watch?v=h65P0QYTLIM&fmt=22</a> <br/>可在此下載: <br/>   <a href='https://web.archive.org/web/20221004064911/https://play.google.com/store/apps/details?id=com.quorve.android.poolpaper'>https://play.google.com/store/apps/details?id=com.quorve.android.poolpaper</a><br/> 創業計畫是以app裡廣告空間為基礎。付費版本可置換使用者所選定的影像。" 
+        en: "This is my own start-up writing mobile apps. The first product, a live wallpaper for Android called “Poolpaper”, can be previewed here: <br/>   <a href='http://www.youtube.com/watch?v=h65P0QYTLIM&fmt=22'>http://www.youtube.com/watch?v=h65P0QYTLIM&fmt=22</a> <br/>and installed from: <br/>   <a href='https://play.google.com/store/apps/details?id=com.quorve.android.poolpaper'>https://play.google.com/store/apps/details?id=com.quorve.android.poolpaper</a><br/> The business case is based on advertising on the pool walls and floor, and a paid version where the images can be customised. I perform all duties in this business. ", 
+        cn: "以下是我獨自設立的公司所設計的第一個手機應用程式。 第一個產品是Android系統裡互動桌布叫 “Poolpaper” 網址為: <br/>   <a href='http://www.youtube.com/watch?v=h65P0QYTLIM&fmt=22'>http://www.youtube.com/watch?v=h65P0QYTLIM&fmt=22</a> <br/>可在此下載: <br/>   <a href='https://play.google.com/store/apps/details?id=com.quorve.android.poolpaper'>https://play.google.com/store/apps/details?id=com.quorve.android.poolpaper</a><br/> 創業計畫是以app裡廣告空間為基礎。付費版本可置換使用者所選定的影像。" 
       }
     },
     {
@@ -583,7 +609,8 @@ function local(what) {
           typeof what == 'function' ?  local(what()) :
           localKey(what); 
 }
-function localarray(what) { return foreach(what, function(i) { return local(what[i])+"<br/>"; }); }
+function localarray(what)        { return foreach(what, function(i) { return             local(what[i])+"<br/>"; }); }
+function localarraybullets(what) { return foreach(what, function(i) { return "&#x2022; "+local(what[i])+"<br/>"; }); }
 
 //Here goes...
 
@@ -658,7 +685,7 @@ function render(root, path) {
                 function(e1) {
                   return e1 ? indent(
                     definition(e1, 'Technologies', local) +
-                    definition(e1, 'Achievements', localarray) +
+                    definition(e1, 'Achievements', localarraybullets) +
                     (e1.Long!==undefined ? el('p', { }, local(e1.Long)) : "") +
                     definition(e1, 'Conclusion', local) + "<br/>"
                   ) : "";
@@ -675,7 +702,7 @@ function render(root, path) {
                 el('p', { }, local(root[k].Where) + ", " + (myFormatDate(root[k].From)()) + " - " + (myFormatDate(root[k].To))()) 
               ) )) +
             definition(root[k], 'Technologies', local) +
-            definition(root[k], 'Achievements', localarray) +
+            definition(root[k], 'Achievements', localarraybullets) +
             ( root[k].Long ? el('p', { }, local(root[k].Long)) : "" ) +
             definition(root[k], 'Conclusion', local) +
             "<hr/>" ;
@@ -700,6 +727,5 @@ function render(root, path) {
   return head(root) + body[view] (root, path) (renderers); 
 }
 
-</script>  
-<body onLoad="boot()"><div id="target"></div></body>
-</html>
+  </script> </head><body onload="boot();"> <div id="target"> </div>
+</body></html>
