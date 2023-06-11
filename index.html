@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+
+<title>Adrian May : Curriculum Vitae</title>  
+
+<style>
+html > *            { font-family: Arial !important; color: #000040; background-color: white;}
+h1,h2               { text-align: center;}
+h3                  { font-variant:small-caps; font-size: x-large;}
+.button             { color: #808080; text-align: center; font-variant: small-caps; font-size: small; }
+.box                { text-align:center; background-color:#DDFFFF; border: 2px solid grey; margin-left:5%; margin-right:5%; padding: 10px;}
+.boxlet             { text-align:left; background-color:#DDFFFF; border: 2px solid grey; margin-left:5%; margin-right:5%; padding: 2px; margin-bottom:7px;}
+table.menu          { border-spacing: 10px; width:90%; margin-left:5%; margin-right:5%; }
+table.menu tr       { width:100%; }
+table.boxlet tr td  { text-align: left; }
+table.menu tr td    { text-align: center; vertical-align: top; padding: 10px; background-color:#DDFFFF; border: 2px solid grey; }
+td.sel, tr.sel      { font-weight: bold; }
+</style>
+
+<script>
+"use strict"
+
+//The data...
+var root = { 
+  Title : { en: "Curriculum Vitae", cn: "履歷" },
+  Name : { en: "Adrian May", cn: "梅楚峰"},
+  Job : { en: "Software Engineering Contractor", cn: "軟體工程師/經理"},
+  Splashlines : [ 
+    { en: "Oxford education", cn: "擁有牛津大學學歷"},
+    { en: "30 years in software and electronic industries", cn: "軟體資訊與電子業二十年的經歷"},
+    { en: "Department and line management experience", cn: "部門經理管理資歷"},
+    { en: "Track record of invention and innovation", cn: "發明申請的資歷"},
+		""
+  ],
+  'Contact' : {
+    Phone: "+44 749 5325970",
+    Email: "adrian.alexander.may@gmail.com",
+    Skype: "a.a.may",
+    GitHub: "adrianmay",
+    DOB:    "30 Oct 1969",
+    Residence: "Otley (nr. Leeds/Bradford), UK",
+    Nationality: { en: "British", cn: "英國"},
+    "Marital Status": { en: "Married", cn: "配偶為台灣公民"},
+    Driver: { en: "Full British car license", cn: "英國和台灣機車和汽車駕照"},
+  },
+  References : [ {
+    Name: "Andrew Handley-Marsh",
+    Company: "Tracsis PLC",
+    Relationship: { en: "Former Team Leader", cn: "前任經理"} ,
+    Contact: "jobriath@gmail.com" 
+  },
+  {
+    Name: "Bob Saraka",
+    Company: "Jabil Circuit",
+    Relationship: "Former Sector Lead",
+    Contact: "robertsaraka@yahoo.com" },
+  ],
+    Introduction : "As a leader of software developers I practise the following values:<ul> <li> Base working culture on 'Engage for Success': staff will pursue company interests to the extent that they're empowered to.  <li> Estimate implementation times objectively by data mining ticket records and source control: only realistic estimates can reserve time for tech debt reduction.  <li> Only implement what is in the interests of both the supplier and the customer: negotiate hard for simple requirements.  <li> Curate the data model intensively to keep it concise and clearly understood by all.  <li> Keep code light and consider it disposable.  <li> Evolve beyond scrum. </ul> <p>This ethos is more fully described <a href='book/index.html'>here</a>.",
+  Education : {
+    'Oxford University' : {
+      en: "1988-91: B.A. Physics (Hons)",
+      cn: "物理學士"
+    },
+    'Brunel University' : {
+      en: "1992-93: M.Sc. Intelligent Systems (AI + Cognitive Psychology)<br/>Dissertation: invented an entirely new class of neural networks for unsupervised learning of homeostatic behaviours, and pointed out analogies with evolution, sociology and psychology. ",
+      cn: "人工智慧系統碩士 (人工智慧+認知心理學) <br/>碩士論文： 發明一套全新的unsupervised learning of homeostatic behaviours的神經網絡。指出其與進化，社會學和心裡學的類比關係。"
+    },
+    'Team Leadership Training': { en: "TQUK Level 2 Certificate in Principles of Team Leading"}
+
+  },
+  Skills : {
+		'Coordination': "Scrum PO, Tech Lead, Department Manager",
+    'Programming' : "Haskell, C/C++, Java, JS, Python, Bash etc, SQL, Forth, Prolog, OpenGL, Nasm", 
+    'Web' : "HTML5, JS, CSS3, jQuery, XSLT, LAMP, nginx, JSP, TCP/IP, Sockets",
+    'Configuration' : "Git, Mercurial, ClearCase, Perforce, Subversion, CVS",
+    'Hardware' : "PC, STB, Amazon EC2, Intel, 68k, ARM (inc M3), MSP430, PIC",
+    'OS' : "Linux, Android, Windows",
+    'Process' : "Scrum/SAFe, Jira, Confluence",
+    Communication : {
+      en: "Fluent English & German, some Mandarin and French.",
+      cn: "英文和德文流利,中文持續進步中,法文-基本。"
+    },
+
+  },
+  Experience : [
+    {
+      Who: "tiko Energy Solutions AG",
+      Sector: "Energy demand regulation",  
+      Where: "Zürich, CH",
+      Activities: "Haskell Development Contractor",
+      Technologies: "Haskell, Nix, Docker, Kubernetes, Kafka, Grafana, MQTT, Protobuf",
+      From: [2022, 7],
+      Achievements: [
+				"Fixed self-releasing memory leak in Kafka's Haskell bindings by manually instrumenting rdkafka",
+				"Built a generally useful HaXml wrapper to defang its numerous inconveniences",
+				"Wrote various apps for trading of energy demand regulation capacity"
+			],
+      Conclusion: { en: "Ongoing.", cn: "持續進行中"}, Long: ""
+    },
+    {
+      Who: "Tracsis PLC",
+      Sector: "Rail",  
+      Where: "Leeds, UK",
+      Activities: "Haskell Development Team Leader",
+      Technologies: "Haskell, Yesod, JS, Vue, Linux, Amazon EC2, hg, git, Jira",
+      From: [2019, 3],
+      To: [2022, 6],
+      Achievements: [
+				"Promoted to team lead within a year",
+				"Rescued the most important customer account by working extreme overtime around Christmas",
+				"Rescued it again by kick-starting a catatonic project and leading it to timely completion",
+        "Dockerised the development environment",
+				"Developed tutorials for newcomers to Haskell",
+        "Successfully lobbied to sell simpler spec to customer",
+        "Several deep refactorings",
+				"Designed a system to predict ticket completion dates",
+			],
+      Conclusion: { en: "Returned to my contracting roots", cn: "持續進行中"}, 
+        Long: "Having fallen in love with Haskell sometime around 2000 and used it for hobby and side projects at work ever since, I jumped at this chance to work not only full time with Haskell but also for a company that had the courage to adopt it. \
+        <p>I learned a great deal from the exposure to a large, high-availability, web-based product (e.g. the sensitivity of performance issues in Haskell) but also retained my existing belief in minimalist coding and conciseness of data. My style has evolved into one where I try to get work done by the standard classes and avoid developing lock-in frameworks. This is a key point of the 1:1 tutorial series I developed for Haskell newcomers.\
+        <p>The setup of Tracsis' development environment was a complex and barely reproducible procedure, so I wrote a docker-compose file to house all the auxilliary processes whilst the main web server continues to run on the host and is in any case made reproducible by stack.\
+        <p>Due to the absence of any requirements gating process, the spec of our main product had become too complex for any dev or user to understand, thus presenting a serious threat to the long term maintainability of the product. In response, I doggedly pressed for a simpler concept to be agreed internally to be recommended to the customer after the first delivery in the new year, reaching consensus after a couple of months of presentations and consultations.\
+        <p>One day, the Goliath of rail software made a serious attack on Tracsis by bundling an obligatory update of a product for a task they dominate (fleet) with another product for a task where we dominate (OTD). In response, we had to form a partnership and interface with a competing fleet product. Lots of meetings were held to brainstorm about how to do this until I heard that the deadline before the Goliath would switch off their pre-update system was only four months away. I responded with a Gantt chart proving that we had long since missed the boat. That precipitated some coding and volunteered me for the leadership of the project. We completed it in time by culling all superfluous features, and the customer chose our solution and declined the Goliath's update."
+    },
+    {
+      Who: "Red Embedded Consulting Ltd",
+      Sector: "Set top boxes",  
+      Where: "Shipley, UK",
+      Activities: "Team Leader then Scrum PO",
+      Technologies: "C++, Java, buildroot, hg, Jira, jq, Unix tools, Haskell, Latex, HTML, CSS, SVG",
+      From: [2015, 10],
+      To: [2019, 2],
+      Achievements: [
+				"Acted as PO for a full SAFe scrum team and coordinator for a bug fixing team",
+        "Developed organisational, analytical and statistical tools to support engineering and management", 
+				"Radically improved the goals in both scrum projects",
+			  "Expended the scope of my employer's business",
+			],
+      Conclusion: { en: "Account shrank as satellite TV market eroded by netflix etc."}, 
+			Long: "After a brief technical inception phase I took leadership of the main bug fixing team serving Red's biggest client: a large US satellite TV provider. The existing methodology made it far from obvious which bugs the team should prioritise, and indeed the criteria changed frequently, so I wrote a web app that pulled data from Jira's REST API and presented it according to easily editable rules. To this I added an automated scrumboard to coordinate progress on the tickets. Later, when the client demanded more detail in timesheets, my team was already collecting all the required data through these tools. Many bugs were intially considered beyond Red's competence, but I often found out why and brought them into our scope e.g. by recommending hardware purchases. <p>On one occasion the client asked for 'throughput' data about bugs. This was not clearly defined but I mined the bug database for the state transistions of thousands of bugs and drew them on a graphic that showed that some recently invented burocracy was causing many good patches to fall by the wayside. I wrote several tools to help the team analyse bugs, including:<ul><li>a heap analyser that helped analyse crashes in innocent code resulting from a prior thread having corrupted the heap,<li>a java deadlock analyser that reduced long kill dumps to a concise description of any deadlock,<li>a thing for reading log files polluted with ad-hoc data, characterising the entries into a meaningful set of types and showing only the first occurrence of each type, which solved lots of formerly intractable bugs,<li>a code change correlation detector which flagged up otherwise undetectable dependencies between source files or functions by looking for their historical tendency to change together in a single commit,<li>a test script compiler to eliminate tedious and error-prone repetitiveness. </ul><p>On the strength of this lateral thinking I was appointed Product Owner of a newly formed SAFe scrum team working in increments of 4 sprints, each sprint being 3 weeks. My role was to liase with the chief architect of said satellite TV provider about requirements and write stories for the team to implement. The first job was to disable some user experiences under conditions of high load due to an ostensible shortage of memory. A full increment was planned to deal with all the usability issues and edge cases arising from this plan. However, I quickly saw the flaw in their memory calculations, directed the team to make better ones and presented the findings in the sprint 1 demo. As a consequence, the client made the rational decision to abort that erosion of the user experience and we spent the rest of the increment on a mixture of bug fixing and proposing projects for the future.<p> In the next increment, the stated goal was to work on a notoriously complex reporting mechanism and equip it with an output to a third party big data hosting service called New Relic. I gradually persuaded the client that it would be easier to implement an entirely new mechanism, and that it could have such a simple data gathering interface that far more data would enter the system than in the old system where injection of data involves a very complex interaction with the central component. Further advantages were that the new system burdenned the data providers with very little performance impact or regression risk. This new system was implemented within an increment and duplicated most of the purposes of the old system which had been four years in the making. The remaining functions will be achieved during the present increment and the client intends to retire the old system entirely. Furthermore, there is now a company-wide directive in place requiring all teams to send evidence of business benefit into our mechanism. That would have been prohibitively arduous and regression-prone in the old system."
+		},
+    {
+      Who: "Open Source Volunteering",
+      Sector: "Web programming",  
+      Where: "Taipei",
+      Activities: "Programmer",
+      Technologies: "Javascript, QUnit, GitHub, Grunt, Browserify",
+      From: [2014, 7],
+      To: [2015, 10],
+      Achievements: [
+        { en: "Written the closest thing to transparent persistence of JS objects.", 
+          cn: "寫出最接近JS objects 的 transparent persistence"}, ],
+      Conclusion: "Needed a paid job.",
+			Long: "This library (<a href='https://web.archive.org/web/20221004064911/https://github.com/adrianmay/rhaboo'>https://github.com/adrianmay/rhaboo</a>) provides persistence for Javascript programmers with the minimum learning curve. The programmer declares ordinary JS objects with a certain constructor: <span style='font-family: courier;'>var mystore = new Rhaboo.Persistent('unique name')</span>, and these persist with almost no further action on the programmer's part. Nested objects and arrays are supported. The only discomfort for the programmer is that because one cannot override assignment to newly invented properties of a known object, i.e., one cannot change the behaviour of <span style='font-family: courier;'>a.b=c</span> if b is something new, these assignments must be performed with <span style='font-family: courier;'>a.write('b', c)</span> instead. The performance is excellent because it does not simply stringify and parse the entire persistent set as most such libraries do. <p>For another Javascript sample, see the source of this CV. <p>During this time I have also been negotiating my self-drafted patent on a browser and search engine with the USPTO. ", 
+    },
+    {
+      Who: "Quorve Media Ltd",
+      Sector: "Android Apps",  
+      Where: "Taipei",
+      Activities: "Entrepreneur",
+      Technologies: "OpenGL, Java, Android, C",
+      From: [2013, 11],
+      To: [2015, 10],
+      Achievements: [
+        { en: "Wrote the most advanced OpenGL wallpaper on Android.", 
+          cn: "寫出在Android作業系統中最進階的OpenGL動畫"}, 
+        { en: "Attracted thousands of loyal users.", 
+          cn: "吸引數以千計的忠實使用者"} ],
+      Conclusion: { en: "More apps planned when time allows.", cn: "時間若允許，會陸續完成計畫中的APP" },
+      Long: {
+        en: "This is my own start-up writing mobile apps. The first product, a live wallpaper for Android called “Poolpaper”, can be previewed here: <br/>   <a href='https://web.archive.org/web/20221004064911/http://www.youtube.com/watch?v=h65P0QYTLIM&fmt=22'>http://www.youtube.com/watch?v=h65P0QYTLIM&fmt=22</a> <br/>and installed from: <br/>   <a href='https://web.archive.org/web/20221004064911/https://play.google.com/store/apps/details?id=com.quorve.android.poolpaper'>https://play.google.com/store/apps/details?id=com.quorve.android.poolpaper</a><br/> The business case is based on advertising on the pool walls and floor, and a paid version where the images can be customised. I perform all duties in this business. ", 
+        cn: "以下是我獨自設立的公司所設計的第一個手機應用程式。 第一個產品是Android系統裡互動桌布叫 “Poolpaper” 網址為: <br/>   <a href='https://web.archive.org/web/20221004064911/http://www.youtube.com/watch?v=h65P0QYTLIM&fmt=22'>http://www.youtube.com/watch?v=h65P0QYTLIM&fmt=22</a> <br/>可在此下載: <br/>   <a href='https://web.archive.org/web/20221004064911/https://play.google.com/store/apps/details?id=com.quorve.android.poolpaper'>https://play.google.com/store/apps/details?id=com.quorve.android.poolpaper</a><br/> 創業計畫是以app裡廣告空間為基礎。付費版本可置換使用者所選定的影像。" 
+      }
+    },
+    {
+      Who: "Oregan Networks",
+      Sector: "Set top boxes",
+      Where: "Taipei",
+      Activities: "Software Development Manager",
+      Technologies: "C++, Embedded linux, various video streaming and DRM protocols",
+      From: [2012, 3],
+      To: [2013, 10],
+      Achievements: [ 
+        { en: "Supervised a porting project which completed in half the expected time due to a policy of deep refactoring.",
+          cn: "督導一件銜接計畫,只用了預期時限的四分之一的時間。主因在於程式碼大量重整的策略。" 
+        },
+        { en: "Several successful hires and development of candidate selection techniques.", 
+          cn: "擔任職位期間成功錄取多位優秀工程師和發展面試的技巧和方法。"
+        },
+        { en: "Renewed infrastructure and source control synchronisation.", 
+          cn: "結構重整和源程式碼控制系統同步化更新。"
+        },
+        { en: "Won client facing role due to client preference.", 
+          cn: "因為客戶的青睞,擔任跟客戶面對面溝通協調的角色。"
+        }
+      ],
+      Conclusion:  {en: "Company reorganisation.", cn: "公司重整" },
+      Long: {
+        en: "After a year of muted results attempting to build and run a programming team in Taipei from London, Oregan decided to hire myself as local technical manager charged with hiring, architecture, project management and local sysadmin. The team grew, raced through its foreseen tasks and was trusted with increasingly critical and exploratory jobs. One port of Oregan's OS to a new STB chipset was completed in half the alloted time although a very similar port had just taken double. The reason was that I directed my team to refactor the most problematic module in the codebase. The source control integration between Taipei and London was overhauled to provide acceptable speeds and the infrastructure was renewed. As one particular project was concluded, our main partner in Taiwan discovered ambiguities in the original contracts and uncertainties as to how to monetise their new assets. In the ensuing reorganisation, I chose not to relocate to London but to spend some time caring for my expected son and pursuing personal projects.", 
+        cn: "Oregan 試著從倫敦總部搖控建立和管理台北團隊,一年之內無太大功效之後,他們僱用我為駐台北的技術經理。我的職責包括雇用新進人員,建立程式架構,專案管理和系統管理。這個團隊在我帶領之下成長茁壯,不但快速地完成許多交辦的任務,隨後被交託許多重要事務和鼓勵研發創新的機會。在我任內Oregan 運作系統銜接新的STB晶片組，只花了預期的一半時間，而相同的銜接先前初花了兩倍的時間。 原因在於我指示我的團隊在程式碼庫裡重構最有問題的模組。而台北跟倫敦之間源代碼管理的整合很精細地檢修之後，提供能接受的速度，基礎下部構造就此更新。　當某一的案子即將結束，我們在台灣的主要客戶,在我們完成契約上所載服務後,發現當初的契約簽訂有一些模糊不清的地方,他們不清楚如何接下去將我們完成移交給他們的產品商品化,進入市場獲利。在接踵而至的公司人事重組，我選擇不搬遷回倫敦，而是照顧我當時即將出世的兒子和從事我自己感興趣的計畫。" 
+      }
+    },
+    {
+      Who: "Mycom International",
+      Sector: "Telco network monitoring",
+      Where: "Taipei",
+      Activities: "Software Development Manager",
+      Technologies: "Java, Ant, XSL, XML, Python, Perforce",
+      From: [2011, 5],
+      To: [2012, 2],
+      Achievements: [
+        { en: "Spotted the company's core problem during the second interview. ", 
+          cn: "在第二次面試時,我早已覺察公司的核心問題"}, 
+        { en: "XSLT-based rewrite of most configuration code.", 
+          cn: "以ＸＳＬT為基礎重寫大部份的結構碼"} ], 
+      Conclusion: { en: "Technical possibilities exhausted.", cn: "在技術層面找不到其他解決方法"}, 
+      Long: {
+        en: "My role here was to lead the team who produce support tools for the software production such as to enhance the efficiency of production and treat their problems of customer and staff loss. I replaced a lot of specific-purpose Perl code with a short and generic XSLT approach, cleaned up the dependency graph in their complex configuration system and thus improved delivery times. To go any deeper, their specification process and database model would have needed a complete redesign which the company was understandably reluctant to do in one step. There was no technical possibility to break this into smaller steps and there seemed to be nothing left to achieve.", 
+        cn: "我的主要職責在於領導研發支援工具的軟體團隊,增進軟體技術研發的效率,改善大量流失員工和顧客的問題　我用簡易的XSLT方法取代許多帶有特定目的的Perl碼，　在他們極端複雜的結構碼系統裡，清除了相關的從屬碼，因此改善了傳輸時效。　若深入探討，我認為他們的需求說明程序和資料庫模式必須得徹底地重新設計,而公司只期望簡易微調。 除了一次性徹底重整設計外，對我來說沒有其餘技術上的可能性。 而公司對做一次性的大改變感到猶豫，而這是相當可以理解的。" 
+      }
+    },
+    {
+      Who: "Jabil Circuit",
+      Sector: "Electronic Manufacturing",
+      Where: "Taipei",
+      Activities: "Programmer, then manager",
+      Technologies: "C/C++, Haskell, Forth, embedded Linux, MSP430, Coldfire, PIC, ZigBee, git",
+      From: [2009, 1],
+      To: [2011, 5],
+      Achievements: [
+        { en: "Emerged as technical leader and was awarded management position.", 
+          cn: "因工作表現成為部門技術領導者,隨後旋即被拔擢為部門經理。" },
+        { en: "Streamlined processes to speed up customer service.", 
+          cn: "簡化及順暢工作流程以加速為客戶所提供的服務。" },
+      ],
+      Conclusion: { en: "Software expertise underused.", cn: "軟體專業無發揮之地"},
+      Long: {
+        en: "Jabil's Design Services (Industrial) division is an EE design centre performing redesigns of customer circuits to achieve cost savings and sometimes developing original products. Projects typically involve RF, energy metering, white goods, etc. As a firmware engineer I wrote code and test scripts and minimised EE BOMs by highlighting unsuspected capabilities of MCUs. Following the resignation of our department manager I emerged as the main technical contact with the US head office, taking de- facto responsibility for all technical project content locally. On the strength of this, I was awarded the manager position which enabled me to discover process efficiency improvements and achieve uptake amongst internal clients, enhance hiring with tests for domain knowledge, IQ, and EQ, repair staff morale by responding to promotion requests with personal development challenges (“if you want that job, start doing it”) and promote our services to a wider range of business units within Jabil.  Nevertheless, I felt that this position was a diversion from the main theme of my career, namely software development, and therefore switched to a software company. ", 
+        cn: "Jabil 設計研發服務(工業部)分部是一個電子工程設計中心。所提供的服務包括重新設計顧客原機器線路,以達到節省成本的目標。有時,也研發新的產品。典型的計畫案包括 RF,能量計量器,家庭用家電等等。我在擔任韌體工程師時,我主要的職務為撰寫指令和相關測試。此外我透過指出 MCU 內部有某些還不為團隊裡的工程師所知的功能,來避免不必要的線路設計。在部門經理離職後,我成為和美國技術設計總部接洽的第一人選,實質上肩負起台北設計分部的管理責任。也因此隨後我被正式拔擢為部門經理。在擔任管理人員時,我努力施行效率改善,提出部門間可執行的方案,確認測試聘僱人員專業能力,IQ 和 EQ 流程,透過回應工作團隊要求升遷的要求來提升團隊工作士氣。(我告訴他們,如果你想要被提升到哪一個職位,你可以先開始試著做這個職位要求的工作內容。),我還在各種不同 Jabil 的部門單位中,大力提倡我所管理部門所能提供的服務。然而,我覺得這個職位遠離了我職涯的初衷-也就是軟體研發,我想如果我的軟體設計管理經驗能被賞識善用,我能對社會有所貢獻。"
+      }
+    },
+    {
+      Who: "TTPCom / Motorola",
+      Sector: "Mobile phone OS",
+      Where: {en:"Cambridge (UK), Taipei", cn:"Cambridge (UK), 台北"},
+      Activities: "Programming and analysis",
+      Technologies: "C/C++, embedded ARM, PC, Perforce",
+      From: [2006, 8],
+      To: [2009, 1],
+      Achievements: [
+        { en: "Completely rewrote the phone's buggy AT interface in 6 weeks.", 
+          cn: "在短短六週之 內全然重寫 AT 界面。" },
+        { en: "Pointed out that non-reproducible factors in the build process were crippling the project and achieved buy-in for a large clean-up drive.", 
+          cn: "在計畫執行時指出一些因基本指令錯誤而不能複製使用的因素,且指出這個原因已經嚴重拖延計畫執行。公司方面全然接受我的建議,開始動用所有人力針對錯誤指令作掃除的動作。" },
+      ],
+      Conclusion:{
+        en:"Motorola in financial trouble, project was killed.", 
+        cn:"公司遭逢財務困難，案子被刪減。"},
+      Long: {
+        en: "TTPCom (now Motorola) make a full suite of ODM-customisable mobile phone software called Ajar which covers everything from the radio protocols to the UI. My role involved on-site customer support, issue tracking, requirements analysis, code discovery, teleconferencing with US stakeholders as well as bug fixing and development of features, applications, debug tools, crash counting systems and phone-PC interaction. Most of the code is in C++ using Perforce for version control, but I chose bash, sed, awk, perl, etc for the crash counter.", 
+        cn: "TTPCom(現在為摩托羅拉電子公司)發展出一整套可依顧客 ODM 需求修訂的手機軟體,,稱為 Ajar。Ajar 涵蓋從無線電電信通信協定到使用者界面(user interface)間的所有相關事項。我的職責包括問題追蹤,需求分析,現有程式指令分析,支持 ODM 與美國利害關係人遠距視訊開會,指令除錯,發展特色功能與應用,發展除錯工具,故障計算系統和手機電腦間的互動等的研發。大部分的指令是由 C++寫成,並以 Perforce 當作是版本控制。但我選擇使用 bash, sed awk, perl 等等當作是故障計算工具。"
+      }
+    },
+    {
+      Who: "ACIS Research",
+      Sector: "GPS Bus Tracking",
+      Where: "Cambridge (UK)",
+      Activities: "Programming, analysis",
+      Technologies: "C/C++/C#, Unix, Windows, Embedded Linux, TCP/IP, Sockets, XML, GPS",
+      From: [2006, 1],
+      To: [2006, 8],
+      Achievements: [
+        { en: "Completed initial 2 month assignment in 3 weeks.", 
+          cn: "初期的原本展期兩個月的任務在三週之內完成。" },
+        { en: "Vastly improved system performance by persuading the company to move on from the “restart all connections at the slightest sign of lag” philosophy.", 
+          cn: "透過說服公司放棄當初堅持但行不通的想法:'一有延遲就重新啟動所有電腦連結。'" },
+        { en: "Rearchitected the system to bring more functions into less computers, thereby reducing network bandwidth requirements. ", 
+          cn: "重新建構系統,讓更多的功能帶進為數更少的電腦。;如此一來使網路頻寬的要求大降。" },
+        { en: "Augmented way-point model to improve accuracy and solve some confusing cases (e.g. roundabouts.)", 
+          cn: "加入公車追蹤系統定時回報,來改善準確度和解決原本困擾團隊的問題,例:公車行駛到圓環;所滋生的複雜計算。" },
+      ],
+      Conclusion:{en: "Client insisted on working fixed-price, but requirements too vague.", cn:"客戶堅持要以一個案子固定預算計費的方式，但需求太過模糊。"},
+      Long: {
+        en: "This small and highly talented Cambridge company spearheaded the market for electronic displays at bus stops driven by GPS data from the buses. They have a multi-server architecture mixing Unix, Windows and embedded Linux coded in C/++/#, processing extreme volumes of data in real time. I entered Acis on a two month contract to develop code to calculate intervals between buses and predict delays propagating between routes sharing the same vehicle. Due to the clear architecture of the server I inherited, I was able to complete both assignments within three weeks. Later activities included: <ul><li> eliminating their network load problems by swapping TCP for UDP (because it cut out their lag→panic→resync→load→lag code,) <li> augmenting their as-the-crow-flies model with waypoints between bus stops to improve tracking reliability, <li> designing the hardware reliability DB and <li> co-architecting the adaptation to a tram system in Holland. </ul>", 
+        cn: "這間位於劍橋地區, 雖小但人才備出的公司是以公車 GPS 資料軀動公車站電子顯示系統市場的佼佼者,他們擁有多項伺服機的結構, 融合了 Unix, Windows 和以 C/++/# 程式語言寫成的嵌入式 Linux,以供在極短時間內處理極大量資料。 一開始,我進入 Acis 是以兩個月的契約加入,職責為發展指令,計算公車間距和預測因為同號公車在同一路線的所造成的延遲。由於我所承接的伺服機結構相當清晰。我很快地將兩項工作提前在三周內完成,比預定的九個星期完工期限要早了六個星期,。 接著我的工作職務包括: <ul><li> 透過將 TCP 轉成 UDP 來減低網路承載量(因為這樣做減低 lag-->panic-->resync-->load-->lag code) <li> 加強他們點對點之間最短距離模式以中繼點(waypoints)方式,在站與站之間, 來改善追蹤的可靠性 <li> 設計硬體的可靠性 DB <li> 共同建構位於荷蘭的輕軌電車的調適性行動計算(adaptation)。</ul>"
+      }
+    },
+    {
+      Who: "Suncorp Research",
+      Sector: "VOIP",
+      Where: "Aldershot (UK)",
+      Activities: "Requirements engineering",
+      Technologies: "Linux, C++, WiFi, VoIP, SIP/H323/RTP, Qt/Qtopia, UML, Visio",
+      From: [2005, 6],
+      To: [2005, 12],
+      Achievements: [
+        { en: "Analysed SMS requirements on VoIP networks and architected Qtopia-based solution.", 
+          cn: "分析 SMS 在 VoIP 的需求,然後建置 Qtopia-based 解決方法。" },
+      ],
+      Conclusion:{ en:"Project relocated to China, UK office closed.",cn:"案子轉換到中國，英國公司關閉。"},
+      Long: {
+        en: "This small British research company had a contract to develop a WiFi/VoIP handset for Telecom Italia and had recently been acquired by Suncorp. We had some vague requirements, a GSM phone to clone and an access point to reverse engineer. We had to clarify the requirements, acquire and integrate code from multiple vendors and adapt QTopia's UI to use SIP/RTP based transport instead of circuit switched connections. My roles were to architect this QTopia adaptation, establish the messaging requirements and turn this into statements of work for the architecture/design team. It transpired after a few months that Suncorp had other plans for the relationship with Telecom Italia, and the project was taken away from us.", 
+        cn: "這間規模不大,當時甫被 Suncorp 併購的英國研發公司,受託為義大利國家電信公司發展 Wifi/VOIP 電話。我們當時有繼承一些模糊不明的需求列單,內容包括需要複製一隻 GSM 手機;還有必須為一個網路橋接器 access point 進行反向工程(reverse engineer)。我們必須從好幾個軟體賣家間找出和融合程式指令來釐清真正的需求,然後取代線路轉換連結,透過調整 QTopia 的 UI 來使用以 SIP/RTP 為基礎的傳送。我的職責為建構此 QTopia 的調整,建立簡訊需求 然後將之轉成可行的工作敘述給建構設計小組執行。幾個月之後,由於 Suncorp 改變了和義大利國家電信公司之間的合作關係,這項計畫遂無疾而終。"
+      }
+    },
+    {
+      Who: "Blue Cell Networks",
+      Sector: "Bluetooth",
+      Where: "Bamberg, Germany",
+      Activities: "Linux admin & programming",
+      Technologies: "Linux, C, Perl, Bash, Bluetooth, GSM, GPRS, ISDN, J2ME, Subversion, UML",
+      From: [2004, 10],
+      To: [2005, 5],
+      Achievements: [
+        { en: "Implemented content management system using SVN server", 
+          cn: "使用 SVN 伺服器建置 Content management system." },
+        { en: "Fixed race condition in official Linux ISDN stack.", 
+          cn: "Fixed race condition in official Linux ISDN stack." },
+      ],
+      Conclusion:{ en:"Client cloned our product and destroyed the business.",cn:"顧客複製產品，該項商業活動不再有獲利空間。"},
+      Long: {
+        en: "This company was at the forefront of the mobile marketing wave, in which promotional material (e.g.  movie clips, discount coupons, sports results) is sent to mobile phones and PDAs via bluetooth.  Linux-based PC104 machines at the client site would perform the bluetooth push, but these had to receive the latest content and firmware via mobile or fixed networking from our content management system, which in turn was configured by the client using a web interface. All of this had to be designed and implemented starting from a bare-bones proof of concept. The company was focused on open source code, to which I contributed fixes and new features. For the content and firmware updates I deployed a subversion client on the PC104 machines so they could pull just the changes to their linux distro in order to minimise GPRS traffic. ", 
+        cn: "這間公司 Blue Cell 在手機行銷市場裡的先驅。。Blue Cell 將促銷資訊(例: 電影預告片, 折價券 和運動賽事結果)經由藍芽發送至手機或者 PDA。顧客端的 Linux-based PC104 機器會進行藍芽推送, 而這必須獲得在我們公司端內容管理系統,透過手機或者是網路,傳送出來最新的內容和韌體。這內容管理系統緊接著,被顧客端的網路介面 configured。 這些過程必須從最原始的觀念證據的骨架,開始被設計與載入。Blue Cell 非常專注於開放式原始碼 (open source code),所以我也在他們的 open source code 裡修改及加入新的功能。 在韌體的更新的部分,我在 PC104 增加了一個 subversion client,來確保它們只傳送新的改變到它們的 Linux distro,以這個方法來減低 GPRS 的流量到最小。"
+      }
+    },
+    {
+      Where: "Gabon",
+      Activities: "Jungle Trekking",
+      From: [2004, 3],
+      To: [2004, 6],
+      Achievements: [
+        { en: "Walked to Langoue Bai alone.", 
+          cn: "獨自一人健行到 Langoue Bai." },
+      ],
+    },
+    {
+      Who: "Siemens Power Generation",
+      Sector: "Power Station Construction",
+      Where: "Erlangen, Germany",
+      Activities: "Asset harmonisation, Project portfolio planning",
+      Technologies: "Word, Powerpoint",
+      From: [2001, 11],
+      To: [2003, 11],
+      Achievements: [
+        { en: "Changed department mindset to avoid vendor-puppet effect.", 
+          cn: "改變部門心態,避免成為供應商的傀儡。" },
+        { en: "Championed business modelling as an investment for the future.", 
+          cn: "支持將 business modelling 視為對未來的投資。" },
+        { en: "Updated project portfolio planning process.", 
+          cn: "Updated project portfolio planning process." },
+        { en: "Facilitated worthy projects by writing convincing business cases.", 
+          cn: "透過撰寫具有說服力的商業計畫書來大力支持有潛力的計畫。" },
+      ],
+      Conclusion: {en:"Management consulting reduced due to economic climate, all contractors released.",cn:"因為景氣欠佳而減低經營諮詢的需求，該公司終止與所有契約工作者的契約關係。"},
+      Long: {
+        en: "Siemens PG created a department for 'Global Enterprise Architecture' whose purposes covered project portfolio planning, budget distribution, discovery and fusion of duplicate IT projects, harmonisation of software assets and skills, predicting technological trends and applying emerging technologies to the power station business. My areas included programming technologies, asset management, network monitoring, mobility and business modeling. This was a diplomatic job where we would attempt to bring project leaders and stakeholders into agreements on technology standards, fuse similar projects and provoke innovation into emerging technologies. In the field of project portfolio planning, I launched an initiative to convert from their seasonal funding rounds to the continuous 'stage gate' process. ", 
+        cn: "西門子 PG 創立了一個部門,叫做環球企業架構(Global Enterprise Architecture)。這個部門的目的為囊括專案組合計畫(project portfolio planning),預算的分配,多重 IT 專案的分析及融合,軟體資產和技術的互容化,預測科技新趨,及運用新推出的技術到發電廠產業。我的職務包括程式指令相關技術,資產管理,網際網路的監控和行動計算(mobile computing)及企業塑模(business modeling)。這是一項需要圓滑溝通的工作,因為我們必須試著促進專案主管和利害關係人間,在技術標準上的達成共識,融併相似案子和激發新的創新思維,並將之運用於新興的科技上。在專案組合計畫(project portfolio planning) 的領域裡,我個人發展出一個新的想法,轉換原先的年度一次的資金申請(seasonal funding rounds)變化成全年接續不斷的'階段性關卡過程'(stage gate process)。"
+      }
+    },
+    {
+      Who: "Siemens Centre of E-Excellence",
+      Sector: "e-Commerce",
+      Where: "Erlangen, Germany",
+      Activities: "Project leader",
+      Technologies: "RUP, UML, Rational Rose, IBM WebSphere, Crossworlds, Java. ",
+      From: [2001, 1],
+      To: [2001, 11],
+      Achievements: [
+        { en: "Prepared suitable methodology based on RUP framework.", 
+          cn: "以 RUP 架構來準備適當的方法。" },
+        { en: "Drove project to completion, including paperwork. ", 
+          cn: "推動計畫直到完成,包括相關工作報表的撰寫。" },
+      ],
+      Conclusion: {en:"Assignment done, contract finished, posted to PG next.",cn:"任務達成，契約結束，接下來獲聘到西門子的另一個子企業Siemens Power Generation"},
+      Long: {
+        en: "I was posted to a complex e-business project to lead the requirements, architecture, development and QA efforts according to the RUP/UML process. I tailored the RUP document collection to the needs of the project, chaired requirements and design discussions and drove all the deliverable artifacts.  Technologies used included XSLT, JSP, IBM Websphere and Crossworlds. ", 
+        cn: "我被分派至一個複雜的網路商業計畫,我的職責包括領導需求,結構,研發,和根據 RUP/UML process 的 QA efforts,我修訂 RUP 文件蒐集來符合專案的需求,帶領需求和設計的討論會 ,推動顧客所要求的成果。使用的技能包括 XSLT, JSP, IBM Websphere 和 Crossworlds。"
+      }
+    },
+    {
+      Who: "Stone Age Software",
+      Sector: "Palm programming",
+      Where: "Bamberg, Germany",
+      Activities: "Start-up",
+      Technologies: "Palm, LAMP",
+      From: [2000, 3],
+      To: [2000, 12],
+      Achievements: [
+        { en: "Invented, implemented and sold product. ", 
+          cn: "發明,執行且販售產品。" },
+        { en: "Designed world's first windable clock for touch screens.", 
+          cn: "設計世界第一個在觸碰式螢幕可以迴轉的時鐘。" },
+        { en: "Won top market share in this category.", 
+          cn: "在 Time tracker 類型的軟體市場市佔率最高。" },
+      ],
+      Conclusion: {en:"Market too small to earn as much as contracting. ",cn:"市場太小，獲利不若先前薪資"},
+      Long: {
+        en: "Having written a time tracker for Palm for my own use, I decided to develop it into a commercial product and market it myself on the internet. This required a web site with license tracking, customer support and mailings which I implemented with LAMP. Although I gained a lot of satisfied customers, Palm software can only be sold very cheaply and mobile time tracking is hardly a mass market, so in the end it didn't really pay for itself.", 
+        cn: "起初源於自己寫了一個時間管理的 palm 軟體程式。當時 PDA 還是熱絡的新興市場,所以我決定將它發展成一個商業產品,並且自行於網路行銷。這項新的挑戰包括一個擁有執照追蹤,顧客支援和收發信件等多功能的網站。我使用 LAMP 來寫成這些需求。雖然我獲得許多滿意的顧客的支持,我體認到 palm 軟體最後只能削價交易,而我所寫的自動時間追蹤管理系統很難成為大眾市場的主流商品。在考量到我的投入並不會得到等同的回饋, 我決定回歸業界。"
+      }
+    },
+    {
+      Who: "Siemens Automation and Drives",
+      Sector: "Heavy Industry",
+      Where: "Nuernberg, Germany",
+      Activities: "Architecture, coding",
+      Technologies: "Microsoft C++, MFC, COM, ATL, Solaris, Intel, ARM, Profibus, C++, DCOM, Clearcase, UML.",
+      From: [1997, 2],
+      To: [2000, 3],
+      Achievements: [
+        { en: "Invented persistent heap. (E.g. ObjectStore is a modern version of this.)", 
+          cn: "發明 persistent heap(ObjectStore 是這現代版本的 persistent heap) " },
+        { en: "Emerged as technical leader in all assignments.", 
+          cn: "因工作表現成為部門在全部任務中的技術領導者。" },
+      ],
+      Conclusion: {
+        en:"Saved up enough money to launch start-up. ", 
+        cn:"存夠創業資金"},
+      Long: {
+        en: "I had various contracts at Siemens A&D, ranging from a quick emergency replacement on a VB project to the founding phase of what would become their flagship product. Platforms ranged from mainstream Windows to Siemens-specific embedded controllers and real-time operating systems.  The target environment was usually heavy industry and I had a fascinating time deploying systems to the VW plant at Wolfsburg, which is truly a world unto itself. ", 
+        cn: "我跟西門子 A&D 有好幾個不同的工作契約,從一個在 visual basic 案子中的取代計畫,到參與草創後來成為頭號紅牌商品的過程。使用的平台範圍從主流的 Window 到西門子專門的嵌入式控制系統和即時運作系統(real-time operating systems)。這些系統運用的環境通常為重工業,而我有很愉快地在位於德國 Wolfsburg 的福斯(Volkswagen)汽車工廠部署這些系統。 這些領域是自己獨樹一格的。"
+      }
+    },
+    {
+      Who: "Freund & Dirks",
+      Sector: "Training",
+      Where: "Frankfurt, Germany",
+      Activities: "Seminar Leader",
+      Technologies: "C++, Design Patterns",
+      From: [1997, 1],
+      To: [1997, 2],
+      Achievements: [
+        { en: "Taught people C++ and design patterns in German, which was still a new language for me at the time. ", 
+          cn: "以德文教授 C++和 design patters.(當時德文對我來說,還是一個初學語言。)" },
+      ],
+      Conclusion: {en:"Preferred programming.",cn:"偏好程式設計"},
+      Long: {
+        en: "I acted as seminar leader for classes in OO and C++ for non-C programmers, and Gamma's Design Patterns. ", 
+        cn: "我負責教導非 C 語言程式工程師們 OO,,C++與 Gamma's Design Patterns 。"
+      }
+    },
+    {
+      Who: "Various",
+      Sector: "Software",
+      Where: "UK, Germany",
+      Activities: "Contract programming",
+      Technologies: "C++, Delphi, Basic, some electronics",
+      From: [1993, 11],
+      To: [1996, 12],
+      Achievements: [
+        { en: "Created a whole new design of dongle with accompanying software. ", 
+          cn: "發展一個新的收發器的設計及驅動使用所需的軟體" },
+        { en: "Learned the most important law of programming: avoid data redundancy. ", 
+          cn: "學到撰寫程式最重要的原則:避免多餘的資料。" },
+      ],
+      Conclusion: {
+        en:"Moved to Germany for personal reasons, soon got on the contract circuit which is rather lucrative in Europe. ", 
+        cn:"因私人因素遷徙至德國，很快進入歐洲獲利豐厚的契約工作圈。"},
+      Long: {
+        en: "This was mostly Windows GUI programming in Visual C++ or Delphi, plus some electronics and device driver development. ", 
+        cn: "這大部份是 Windows GUI 以 Visual C++ 或 Delphi 程式語言撰寫,加上一些電子和設備驅動程式發展。"
+      }
+    },
+    {
+      Who: "Royal Aerospace Establishment",
+      Sector: "Aerospace ",
+      Where: "Farnborough (UK)",
+      Activities: "Research",
+      Technologies: "C, Fortran",
+      From: [1988, 9],
+      To: [1991, 6],
+      Achievements: [
+        { en: "Duplicated a recent research finding about neural networks and uncovered the need for certain techniques that were not in the original publication.", 
+          cn: "重製一個有關神經網絡的研究結果,發現有一些在原本出版的研究中所未提到但 必須的一些技術。" },
+      ],
+      Conclusion: {en:"Didn't apply for job there after sponsorship because I wanted to work somewhere more dynamic. ", cn:"學業資助關係結束後，沒有在該機構覓職，因為想找更有挑戰性的工作環境。"},
+      Long: {
+        en: "My physics degree was sponsored by the Ministry of Defence and I was lucky enough to be posted to the RAE where I researched issues in flight simulation and neural networks. ", 
+        cn: "我的大學物理學學位由英國國防部所提供的獎學金所贊助,而我很幸運被分派到英國皇家航空太空研究機構(RAE),進行飛行模擬相關問題和神經網路之間的應用。"
+      }
+    },
+  ],
+}
+
+//That was the data, now for the code...
+
+//The only state variables...
+//var path = ['Experience', 0];
+var path = ['Introduction'];
+var lang = 'en';
+var view = 'Interactive';
+
+//And their 'getters' and setters...
+function otherlang() { return  (lang==='en')?'cn':'en'; }
+function otherview() { return  (view==='Interactive')?'Printable':'Interactive'; }
+function toggleLanguage(l) { lang = otherlang(); boot(); }
+function toggleView(l) { view = otherview(); boot(); }
+function setPath(p) { path = p; boot(); }
+
+//Basic HTML stuff ...
+
+function attlist(atts) { 
+  var ret = "";
+  for (var name in atts) 
+    if (atts.hasOwnProperty(name)) 
+      ret += " "+name+"='"+atts[name]+"'";
+  return ret;
+}
+function el(el,atts, body) { return "<"+el+attlist(atts)+">"+ body + "</"+el+">\n"; }
+function indent(b) { return el('div', { style:"margin-left:5%; margin-right:5%"}, b); }
+function definition(e, k, func) { //E.g. Achievements: whatever
+  return e[k]!==undefined ? 
+    ( el('table', {width:'100%' }, el('tr', { width: '100%'}, el('td', { width : "25%", style:'vertical-align: top; '}, localKey(k)+":") + el('td', { }, func(e[k])) )) ) 
+    : "";
+}
+
+function foreach(col, func) {
+  var ret = "";
+  for (var i in col) 
+    if (col.hasOwnProperty(i)) 
+      ret = ret + func(i);
+  return ret;
+}
+
+//Localisation...
+
+function myFormatDate(d) { return function () {
+  if (!d) return "present";
+  var format = { year: "numeric", month: "short"};
+  if (d[2]) {
+    format.day = 'numeric';
+  } else {
+    d[2] = 0;
+  }
+  var dt = new Date( Date.UTC(d[0], d[1], d[2], 0, 0, 0));
+  if (dt) return dt.toLocaleDateString( lang=='cn' ? 'zh-TW' : 'en-GB', format); 
+  return "";
+}}
+
+var keyTranslations = {
+  en: {
+    en: "English",
+    cn: "Chinese", 
+  },
+  cn: {
+    en: "英文",
+    cn: "中文", 
+    Driver: "駕照",
+    "Marital Status": "婚姻狀況",
+    Nationality: "國籍",
+    Taipei: "台北",
+    Residence: "居住地",
+    Technologies: "技能",
+    Conclusion: "結束",
+    Entrepreneur: "創業者",
+    DOB: "生日",
+    Phone: "電話",
+    Company: "公司",
+    Introduction: "自傳",
+    Printable: "列印模式",
+    Interactive: "互動",
+    Skills: "技能",  
+    Education: "學歷",
+    Programmer: "軟體工程師"  ,
+    "Software Development Manager" : "軟體開發經理",
+    "Software Engineer": "軟體工程師",
+    "Oxford University" : "英國牛津大學",
+    "Brunel University" : "英國Brunel大學",
+    Experience: "經歷",
+    Contact: "聯絡",
+    Name: "名字",
+    Relationship: "關聯",
+    References: "推薦人",
+    Achievements: "工作成果",
+    "Eligible to work in" : "能合法在以下國家工作"
+  }
+}
+
+function localKey(s)   { return keyTranslations[lang]        [s] || s; }
+function unlocalKey(s) { return keyTranslations[otherlang()] [s] || s; }
+function local(what) { 
+  return  typeof what === 'object'  ?  what[lang] || what[otherlang()] : 
+          typeof what == 'function' ?  local(what()) :
+          localKey(what); 
+}
+function localarray(what) { return foreach(what, function(i) { return local(what[i])+"<br/>"; }); }
+
+//Here goes...
+
+function boot() { //body.onLoad calls this, as do the setters of path, lang and view
+  document.getElementById('target').innerHTML = render(root, path.slice()); 
+}
+
+function render(root, path) { 
+
+  //The big banner ...
+  function head(root) {
+    return "" +
+      el('div', { class: 'box'},
+        el('table', { width: '100%'}, el('tr', { width: '100%'}, 
+          el('td', { width:'20%' }, 
+            el('div', {class:'button viewbutton', onClick:'toggleView();'}, localKey(otherview())) ) + 
+          el('td', {  style:'text-align:center' }, 
+            el('h2', {}, local(root.Title)) ) + 
+          el('td', { width:'20%' }, 
+            el('div', {class:'button langbutton', onClick:'toggleLanguage();'}, unlocalKey(otherlang())) ) 
+        )) +
+        el('h1', {}, local(root.Name)) +
+        el('h2', {}, local(root.Job)) +
+        el('p', { }, foreach(root.Splashlines, function (i) { return local(root.Splashlines[i]) + "<br/>"; } ) ) ) ;
+  }
+
+  //Little bit of mechanics...
+  function derefview(o) { return typeof o==='object' ? o[view] : o; }
+
+  //Everything below the banner in either view mode...
+  var body = { //This is the main algorithm. Everything else just squirts out html...
+    Interactive : function (root, path) { return function (renderer) {
+      var r;
+      var which = path[0];
+      return "" + 
+        el('table', { class:'menu'}, el('tr', { }, foreach(renderer, function (k) { 
+          return el('td', { class: (which==k ? "sel" : "") , onClick: 'setPath(["'+k+'"]);' }, localKey(k)); 
+        }) )) + 
+        derefview(renderer[r = path.shift()]) (root[r], path); //Recurse into relevant view mode with decapitated root and path
+    }},
+    Printable: function (root) { return function (renderer) {
+      return foreach(renderer, function(k) {
+        return "" + 
+          el('h3', { }, localKey(k)) +
+          derefview(renderer[k]) (root[k]); //Decapitate root but path irrelevant in printable mode anyway
+      });
+    }},
+  }
+
+  //Kinda like a rudimentary XSL transform...
+  var renderers = {
+    'Introduction': function(root) {
+      return indent(el('p', { }, local(root)));
+    },
+    'Skills': function(root) {
+      return indent(foreach(root, function (k) { return definition(root,k,local)+"<br/>";}));
+    },
+    'Education': function(root) {
+      return indent(foreach(root, function (k) { return definition(root,k,local)+"<br/>";}));
+    },
+    'Experience': { 
+      'Interactive': function(root, path) {
+        var which = path[0];
+        //Similar to body.Interactive but details right after button, not all at the end...
+        return foreach(root, function (k) {
+          return el('table', { width:'90%', class:"boxlet" }, el('tr', { class: (which==k ? "sel" : ""), onClick: 'setPath(["Experience","'+k+'"]);'}, 
+              el('td', { width:'40%'}, (root[k].Who || "") + (root[k].Sector ? " (" + root[k].Sector + ")" : "") ) +
+              el('td', { width:'30%'}, local(root[k].Activities)) +
+              el('td', { width:'30%', style:"text-align:right;"}, local(root[k].Where) + ", " + (myFormatDate(root[k].From)()) + " - " + (myFormatDate(root[k].To))()) +
+              "" ) ) + 
+            ( which==k ?  
+                function(e1) {
+                  return e1 ? indent(
+                    definition(e1, 'Technologies', local) +
+                    definition(e1, 'Achievements', localarray) +
+                    (e1.Long!==undefined ? el('p', { }, local(e1.Long)) : "") +
+                    definition(e1, 'Conclusion', local) + "<br/>"
+                  ) : "";
+                } ( root[path[0]] ) 
+            : "" ); 
+        });
+      }, 
+      'Printable' : function (root) {
+        return foreach(root, function(k) {
+          return "" +
+            el('table', { width:'90%'}, el('tr', { }, el('td', { }, 
+                el('h4', { },    ( root[k].Who ?  root[k].Who + " (" + root[k].Sector + ") <br/> " : ""  )   + local(root[k].Activities)) 
+              ) + el('td', { style:'text-align:right;'}, 
+                el('p', { }, local(root[k].Where) + ", " + (myFormatDate(root[k].From)()) + " - " + (myFormatDate(root[k].To))()) 
+              ) )) +
+            definition(root[k], 'Technologies', local) +
+            definition(root[k], 'Achievements', localarray) +
+            ( root[k].Long ? el('p', { }, local(root[k].Long)) : "" ) +
+            definition(root[k], 'Conclusion', local) +
+            "<hr/>" ;
+        });
+      }
+    },
+    'References': function(root) {
+      var keys = ["Name", "Company", "Relationship", "Contact"];
+      return indent( el('table', { width: '90%' }, foreach(keys, function(k) {
+        return el('tr', { }, el('td', {width:'20%', padding:'20pt' }, (local(keys[k]))+":" ) + foreach(root, function (ri) { 
+          return el('td', {padding:'20pt' }, local(root[ri][keys[k]])); 
+        } ));
+      })));
+    },
+    'Contact' : function(root) {
+      return indent( el('table', { width: '90%' }, foreach(root, function (k) {
+        return el('tr', {}, el('td', {width:'30%'}, localKey(k)+":") + el('td', {}, local(root[k])) )
+      })));
+    },
+  }
+
+  return head(root) + body[view] (root, path) (renderers); 
+}
+
+</script>  
+<body><div id="target"></div></body>
+</html>
