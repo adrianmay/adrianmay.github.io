@@ -63,7 +63,7 @@ var root = {
     Relationship: "Former Sector Lead",
     Contact: "robertsaraka@yahoo.com" },
   ],
-    Introduction : `As a leader of software developers I'm guided by the following values:<ul>
+  Introduction : `As a leader of software developers I'm guided by the following values:<ul>
     <li> Base working culture on Employee Engagement principles.
     <li> Estimate implementation times objectively by data mining ticket records and source control.
     <li> Only implement what is in the interests of both the supplier and the customer: negotiate hard for simple requirements.
@@ -107,6 +107,7 @@ var root = {
       Activities: "Haskell Development Contractor",
       Technologies: "Haskell, Nix, Docker, Kubernetes, Kibana, Grafana, Prometheus, Thrift, Kafka, MQTT, Protobuf",
       From: [2022, 7],
+      To: [2023, 6],
       Achievements: [
 				"Fixed self-releasing memory leak in Kafka's Haskell bindings by manually instrumenting rdkafka.",
 				"Built a generally useful HaXml wrapper to defang its numerous inconveniences.",
@@ -727,5 +728,6 @@ function render(root, path) {
   return head(root) + body[view] (root, path) (renderers); 
 }
 
-  </script> </head><body onload="boot();"> <div id="target"> </div>
-</body></html>
+</script> </head>
+<body onload="boot();"> <div id="target"> </div></body> </html>
+
