@@ -541,7 +541,7 @@ function el(el,atts, body) { return "<"+el+attlist(atts)+">"+ body + "</"+el+">\
 function indent(b) { return el('div', { style:"margin-left:5%; margin-right:5%"}, b); }
 function definition(e, k, func) { //E.g. Achievements: whatever
   return e[k]!==undefined ? 
-    ( el('table', {width:'100%' }, el('tr', { width: '100%'}, el('td', { width : "25%", style:'vertical-align: top; '}, localKey(k)+":") + el('td', { }, func(e[k])) )) ) 
+    ( el('table', {width:'100%' }, el('tr', { width: '100%'}, el('td', { width : "25%", style:'vertical-align: top; '}, localKey(k)+":") + el('td', { width : "75%" }, func(e[k])) )) ) 
     : "";
 }
 
