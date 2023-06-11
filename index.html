@@ -17,7 +17,7 @@ table.menu tr       { width:100%; }
 table.boxlet tr td  { text-align: left; }
 table.together tr td, table.together tr th { page-break-inside: avoid; }
 table.menu tr td    { text-align: center; vertical-align: top; padding: 10px; background-color:#DDFFFF; border: 2px solid grey; }
-td.sel, tr.sel      { font-weight: bold; }
+td.sel, tr.sel      { font-weight: bold; font-size: 10pt; }
 @media print        { .pagebreak { page-break-before: always; }
 }
 </style>
@@ -715,7 +715,7 @@ function render(root, path) {
     },
     'References': function(root) {
       var keys = ["Name", "Company", "Relationship", "Contact"];
-      return         indent( el('table', { width: '90%', class: "together" }, foreach(keys, function(k) {
+      return indent( el('table', { width: '90%', class: "together" }, foreach(keys, function(k) {
           return el('tr', { }, el('td', {width:'20%', padding:'20pt' }, (local(keys[k]))+":" ) + foreach(root, function (ri) { 
             return el('td', {padding:'20pt' }, local(root[ri][keys[k]])); 
           } ));
