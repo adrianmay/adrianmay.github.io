@@ -708,7 +708,7 @@ function render(root, path) {
               ) )) +
             definition(root[k], 'Technologies', local) +
             definition(root[k], 'Achievements', localarraybullets) +
-            ( root[k].Long ? el('p', { }, local(root[k].Long)) : "" ) +
+            ( root[k].Long ? el('p', { width: '100%' }, local(root[k].Long)) : "" ) +
             definition(root[k], 'Conclusion', local) +
             "<hr/>";
         }) + "<div class='pagebreak'> </div>" ;
