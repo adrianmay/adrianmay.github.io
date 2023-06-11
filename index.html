@@ -15,8 +15,11 @@ span.code           { font-family: monospace; padding: 0 10px; }
 table.menu          { border-spacing: 10px; width:90%; margin-left:5%; margin-right:5%; }
 table.menu tr       { width:100%; }
 table.boxlet tr td  { text-align: left; }
+table.together tr td, table.together tr th { page-break-inside: avoid; }
 table.menu tr td    { text-align: center; vertical-align: top; padding: 10px; background-color:#DDFFFF; border: 2px solid grey; }
 td.sel, tr.sel      { font-weight: bold; }
+@media print        { .pagebreak { page-break-before: always; }
+}
 </style>
 
 <script>
@@ -706,17 +709,17 @@ function render(root, path) {
             definition(root[k], 'Achievements', localarraybullets) +
             ( root[k].Long ? el('p', { }, local(root[k].Long)) : "" ) +
             definition(root[k], 'Conclusion', local) +
-            "<hr/>" ;
-        });
+            "<hr/>";
+        }) + "<div class='pagebreak'> </div>" ;
       }
     },
     'References': function(root) {
       var keys = ["Name", "Company", "Relationship", "Contact"];
-      return indent( el('table', { width: '90%' }, foreach(keys, function(k) {
-        return el('tr', { }, el('td', {width:'20%', padding:'20pt' }, (local(keys[k]))+":" ) + foreach(root, function (ri) { 
-          return el('td', {padding:'20pt' }, local(root[ri][keys[k]])); 
-        } ));
-      })));
+      return         indent( el('table', { width: '90%', class: "together" }, foreach(keys, function(k) {
+          return el('tr', { }, el('td', {width:'20%', padding:'20pt' }, (local(keys[k]))+":" ) + foreach(root, function (ri) { 
+            return el('td', {padding:'20pt' }, local(root[ri][keys[k]])); 
+          } ));
+        })));
     },
     'Contact' : function(root) {
       return indent( el('table', { width: '90%' }, foreach(root, function (k) {
