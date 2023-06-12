@@ -30,10 +30,10 @@ td.sel, tr.sel      { font-weight: bold; }
 var root = { 
   Title : { en: "Curriculum Vitae", cn: "履歷" },
   Name : { en: "Adrian May", cn: "梅楚峰"},
-  Job : { en: "Software Engineering Contractor", cn: "軟體工程師/經理"},
+  Job : { en: "Software Engineer and Manager", cn: "軟體工程師/經理"},
   Splashlines : [ 
     { en: "Oxford education", cn: "擁有牛津大學學歷"},
-    { en: "30 years in software and electronic industries", cn: "軟體資訊與電子業二十年的經歷"},
+    { en: "30 years in software and electronic industries", cn: "軟體資訊與電子業三十年的經歷"},
     { en: "Department and line management experience", cn: "部門經理管理資歷"},
     { en: "Track record of invention and innovation", cn: "發明申請的資歷"},
 		""
@@ -49,7 +49,8 @@ var root = {
     "Marital Status": { en: "Married", cn: "配偶為台灣公民"},
     Driver: { en: "Full British car license", cn: "英國和台灣機車和汽車駕照"},
   },
-  References : [ {
+  References: "3 on demand from Jabil, Tracsis and tiko",
+  References_ : [ {
     Name: "Noah Halford",
     Company: "tiko Energy Solutions AG",
     Relationship: { en: "Former Team Leader", cn: "前任經理"} ,
@@ -714,13 +715,13 @@ function render(root, path) {
         }) + "<div class='pagebreak'> </div>" ;
       }
     },
-    'References': function(root) {
-      var keys = ["Name", "Company", "Relationship", "Contact"];
-      return indent( el('table', { width: '90%', class: "together" }, foreach(keys, function(k) {
-          return el('tr', { }, el('td', {width:'20%', padding:'20pt' }, (local(keys[k]))+":" ) + foreach(root, function (ri) { 
-            return el('td', {padding:'20pt' }, local(root[ri][keys[k]])); 
-          } ));
-        })));
+      'References': function(root) { return indent(el('p', {}, "3 available on demand from recent years"));
+//      var keys = ["Name", "Company", "Relationship", "Contact"];
+//      return indent( el('table', { width: '90%', class: "together" }, foreach(keys, function(k) {
+//          return el('tr', { }, el('td', {width:'20%', padding:'20pt' }, (local(keys[k]))+":" ) + foreach(root, function (ri) { 
+//            return el('td', {padding:'20pt' }, local(root[ri][keys[k]])); 
+//          } ));
+//        })));
     },
     'Contact' : function(root) {
       return indent( el('table', { width: '90%' }, foreach(root, function (k) {
