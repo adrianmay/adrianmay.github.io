@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html  dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Empirical Development</title>
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.4/css/uikit.gradient.css">
+
+        <link rel="stylesheet" href="style.css">
+        <link href="https://vjs.zencdn.net/5.4.4/video-js.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+        <script src="uikit.js"></script>
+        <script src="scripts.js"></script>
+        <script src="jquery.sticky-kit.js"></script>
+
+        <meta name="generator" content="pandoc-uikit" />
+                        <title>Empirical Development</title>
+        <style type="text/css">code{white-space: pre;}</style>
+                                                       
+    </head>
+
+    <body>
+
+
+        <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+
+                        <div class="uk-grid" data-uk-grid-margin>
+                <div class="uk-width-1-1">
+                    <h1 class="uk-heading-large">Empirical Development</h1>
+                                                        </div>
+            </div>
+            
+            <div class="uk-grid" data-uk-grid-margin >          
+                <div class="uk-width-medium-1-4">
+                    <div class="uk-overflow-container" data-uk-sticky="{top:25,media: 768}">
+                        <div class="uk-panel uk-panel-box menu-begin" >
+
+                                                        <ul>
+                                                        <li><a href="#introduction"><span class="toc-section-number">1</span> Introduction</a></li>
+                                                        <li><a href="#reality"><span class="toc-section-number">2</span> Reality</a>
+                                                        <ul>
+                                                        <li><a href="#customer-relationships"><span class="toc-section-number">2.1</span> Customer relationships</a></li>
+                                                        <li><a href="#stochastic-implementation-times"><span class="toc-section-number">2.2</span> Stochastic implementation times</a></li>
+                                                        <li><a href="#developers"><span class="toc-section-number">2.3</span> Developers</a></li>
+                                                        <li><a href="#tech-debt"><span class="toc-section-number">2.4</span> Tech debt</a></li>
+                                                        <li><a href="#common-dysfunctional-mechanisms"><span class="toc-section-number">2.5</span> Common dysfunctional mechanisms</a></li>
+                                                        </ul></li>
+                                                        <li><a href="#what-is-a-development-process-for"><span class="toc-section-number">3</span> What is a development process for?</a>
+                                                        <ul>
+                                                        <li><a href="#not-developer-choreography"><span class="toc-section-number">3.1</span> Not developer choreography</a></li>
+                                                        <li><a href="#contract-formation"><span class="toc-section-number">3.2</span> Contract formation</a></li>
+                                                        <li><a href="#capacity-planning"><span class="toc-section-number">3.3</span> Capacity planning</a></li>
+                                                        <li><a href="#creating-a-roadmap"><span class="toc-section-number">3.4</span> Creating a roadmap</a></li>
+                                                        <li><a href="#predicting-rates-of-progress"><span class="toc-section-number">3.5</span> Predicting rates of progress</a></li>
+                                                        <li><a href="#being-trusted-by-customers"><span class="toc-section-number">3.6</span> Being trusted by customers</a></li>
+                                                        <li><a href="#controlling-tech-debt"><span class="toc-section-number">3.7</span> Controlling tech debt</a></li>
+                                                        <li><a href="#retaining-staff"><span class="toc-section-number">3.8</span> Retaining staff</a></li>
+                                                        </ul></li>
+                                                        <li><a href="#roadmap-preparation-by-pos"><span class="toc-section-number">4</span> Roadmap preparation by POs</a>
+                                                        <ul>
+                                                        <li><a href="#pos"><span class="toc-section-number">4.1</span> POs</a></li>
+                                                        <li><a href="#solutionizing-process"><span class="toc-section-number">4.2</span> Solutionizing Process</a></li>
+                                                        </ul></li>
+                                                        <li><a href="#testers-as-assistant-pos"><span class="toc-section-number">5</span> Testers as assistant POs</a></li>
+                                                        <li><a href="#estimation-by-pms"><span class="toc-section-number">6</span> Estimation by PMs</a>
+                                                        <ul>
+                                                        <li><a href="#little-oracle"><span class="toc-section-number">6.1</span> Little Oracle</a></li>
+                                                        <li><a href="#big-oracle"><span class="toc-section-number">6.2</span> Big Oracle</a></li>
+                                                        <li><a href="#the-world-changes"><span class="toc-section-number">6.3</span> The World Changes</a></li>
+                                                        <li><a href="#huge-oracle"><span class="toc-section-number">6.4</span> Huge Oracle</a></li>
+                                                        </ul></li>
+                                                        <li><a href="#development"><span class="toc-section-number">7</span> Development</a>
+                                                        <ul>
+                                                        <li><a href="#organisation"><span class="toc-section-number">7.1</span> Organisation</a></li>
+                                                        <li><a href="#rituals"><span class="toc-section-number">7.2</span> Rituals</a></li>
+                                                        </ul></li>
+                                                        <li><a href="#knowledge-management"><span class="toc-section-number">8</span> Knowledge Management</a>
+                                                        <ul>
+                                                        <li><a href="#nuturing-and-using-domain-and-product-knowledge"><span class="toc-section-number">8.1</span> Nuturing and using domain and product knowledge</a></li>
+                                                        <li><a href="#coding-knowledge-monopolies"><span class="toc-section-number">8.2</span> Coding knowledge monopolies</a></li>
+                                                        <li><a href="#controversy-is-the-mother-of-invention"><span class="toc-section-number">8.3</span> Controversy is the mother of invention</a></li>
+                                                        <li><a href="#employee-engagement"><span class="toc-section-number">8.4</span> Employee Engagement</a></li>
+                                                        </ul></li>
+                                                        <li><a href="#the-transition"><span class="toc-section-number">9</span> The Transition</a></li>
+                                                        <li><a href="#miscellaneous-topics"><span class="toc-section-number">10</span> Miscellaneous Topics</a>
+                                                        <ul>
+                                                        <li><a href="#remote-working"><span class="toc-section-number">10.1</span> Remote working</a></li>
+                                                        <li><a href="#architecture"><span class="toc-section-number">10.2</span> Architecture</a></li>
+                                                        <li><a href="#hiring"><span class="toc-section-number">10.3</span> Hiring</a></li>
+                                                        <li><a href="#technical-writing"><span class="toc-section-number">10.4</span> Technical Writing</a></li>
+                                                        </ul></li>
+                                                        <li><a href="#appendix-collection-of-scrum-fallacies"><span class="toc-section-number">11</span> Appendix: Collection of Scrum Fallacies</a>
+                                                        <ul>
+                                                        <li><a href="#about-customers"><span class="toc-section-number">11.1</span> About customers</a></li>
+                                                        <li><a href="#about-the-what"><span class="toc-section-number">11.2</span> About the “what”</a></li>
+                                                        <li><a href="#about-the-when"><span class="toc-section-number">11.3</span> About the “when”</a></li>
+                                                        <li><a href="#about-the-lifestyle"><span class="toc-section-number">11.4</span> About the lifestyle</a></li>
+                                                        <li><a href="#scrum-variations"><span class="toc-section-number">11.5</span> Scrum variations</a></li>
+                                                        </ul></li>
+                                                        </ul>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-width-medium-3-4">
+<p>© Adrian May 2021</p>
+<h1 data-number="1" id="introduction"><span class="header-section-number">1</span> Introduction</h1>
+<p>Empirical Development is an evidence-based software development process.</p>
+<p>The main points are:</p>
+<ul>
+<li>The customer might be king, but don’t die for them.</li>
+<li>Take control of the product roadmap.</li>
+<li>Quote probabilities with all deadlines.</li>
+<li>POs decide what, PMs predict when.</li>
+<li>Testers are trainee POs.</li>
+<li>Use data mining and simulation for estimation and planning.</li>
+<li>Use the same data for detecting knowledge monopolies.</li>
+<li>Don’t sprint cos it distorts, blurs and oversimplifies everything.</li>
+<li>Control tech debt by not rushing the devs.</li>
+<li>Involve devs in designing solutions.</li>
+<li>Specify a range of luxury to allow scope trimming under pressure.</li>
+<li>Minimise churn using employee engagement.</li>
+<li>Foster controversy, as it’s the mother of invention.</li>
+</ul>
+<h1 data-number="2" id="reality"><span class="header-section-number">2</span> Reality</h1>
+<h2 data-number="2.1" id="customer-relationships"><span class="header-section-number">2.1</span> Customer relationships</h2>
+<h3 data-number="2.1.1" id="types"><span class="header-section-number">2.1.1</span> Types</h3>
+<ul>
+<li>(Time and materials out of scope.)</li>
+<li>Might just be willing to do scrum, esp. small, non-technical customers.</li>
+<li>Number of customers of the codebase: 1, 5 or a million: affects power over roadmap.</li>
+<li>Tendering, and similar waterfall contracts.</li>
+<li>Technical customers: might inspect source code.</li>
+<li>Early stage start-up: collect data to get prepared for later</li>
+</ul>
+<p>Badly written contracts (from flying pigs to blank cheques.)</p>
+<p>Conspiring with the customer to underestimate costs and schedule.</p>
+<p>Customers would always rather squeeze out another comfort feature before signing off.</p>
+<p>Psychological abuse by customer and self-help.</p>
+<p>BATNA</p>
+<p>Trust is the only currency.</p>
+<h2 data-number="2.2" id="stochastic-implementation-times"><span class="header-section-number">2.2</span> Stochastic implementation times</h2>
+<p>Ticket implementation times are long tailed distributions.</p>
+<p>Guarantees about small units of work are foolhardy.</p>
+<p>Epics more predictable than individual tickets, if you do the sums right.</p>
+<p>Even completed tickets aren’t 100% certain, as bugs may yet be found.</p>
+<p>Real vs imaginary deadlines: customer must quantify the damage of lateness of specific goals to set risk aversity.</p>
+<h2 data-number="2.3" id="developers"><span class="header-section-number">2.3</span> Developers</h2>
+<h3 data-number="2.3.1" id="constraints"><span class="header-section-number">2.3.1</span> Constraints</h3>
+<p>Will start the next ticket when the previous one is complete.</p>
+<p>Devs can only rescue endangered deadlines by incurring tech debt.</p>
+<p>Devs choose tickets that match their skills:</p>
+<ul>
+<li>Personal knowledge monopolies are common.</li>
+<li>Adding up story points assumes a clone army.</li>
+<li>Velocity is not per team, rather, per-dev, or per-dev-in-a-given-module.</li>
+</ul>
+<p>Prioritization melee:</p>
+<ul>
+<li>Emergencies</li>
+<li>Deadlines</li>
+<li>Blocking and blocked tickets</li>
+<li>Procrastinated tech debt</li>
+<li>Pick a small ticket cos sprint end is near (what???)</li>
+</ul>
+<p>Devs’ other duties</p>
+<h3 data-number="2.3.2" id="psychology"><span class="header-section-number">2.3.2</span> Psychology</h3>
+<p>Devs are in short supply, and they know it.</p>
+<p>More likely to be turnover’s limiting factor than customers.</p>
+<p>Depressed by tech debt and angered by being forced to incur it.</p>
+<p>Taught to overgeneralise.</p>
+<p>Enjoy retros.</p>
+<p>Reluctant to estimate in days, fearing accountability.</p>
+<p>Sociable, but need uninterrupted time.</p>
+<p>Might fail to fear complexity.</p>
+<h2 data-number="2.4" id="tech-debt"><span class="header-section-number">2.4</span> Tech debt</h2>
+<p>It’s deadly.</p>
+<p>It is literally a debt, so calculate the interest rate and tell the CFO.</p>
+<p>Want to keep codebase alive until rendered obsolete by changes in market or tech.</p>
+<h3 data-number="2.4.1" id="the-gory-details-of-codebase-collapse"><span class="header-section-number">2.4.1</span> The gory details of codebase collapse</h3>
+<p>(% indicates measurable symptom)</p>
+<ul>
+<li>All productive work generates mess which costs money and time to clear up:
+<ul>
+<li>Every builder understands this, as does every restauranteur, every hairdresser, everybody.</li>
+<li>Only software managers miss this because the mess is only visible to the devs.</li>
+</ul></li>
+<li>There’s regular deadline pressure %</li>
+<li>Devs beg for time to tidy up and are refused due to deadline pressure.</li>
+<li>Smart devs ignore the refusal, but they’re outnumbered and can’t keep pace.</li>
+<li>The mess complicates future development so:
+<ul>
+<li>it multiplies exponentially,</li>
+<li>coding is slow, %</li>
+<li>speed of coding is less predictable. %</li>
+</ul></li>
+<li>Devs become despondent at the mess they have to deal with and dream of a better project.</li>
+<li>They blame managament for refusing them the time to work to a standard they could be proud of.</li>
+<li>They abandon ship, and especially if they’re vocal about the reasons, others follow. %</li>
+<li>Newbies are hired but there aren’t enough old hands to teach them about the spaghetti.</li>
+<li>A high proportion of new hires quit early. %</li>
+<li>They reimplement functionality they don’t know is already there so:
+<ul>
+<li>Linecount expands faster than features. %</li>
+<li>Bugs proliferate due to the redundancy.</li>
+<li>Terror modules appear: those that nobody dares touch and that complicate life for interacting modules</li>
+</ul></li>
+<li>More time devoted to bug fixing than new features. %</li>
+<li>More deadline pressure cos feature train not advancing.</li>
+<li>Bug list can’t be shortened after many months or years. %</li>
+<li>Toxic blame game breaks out.</li>
+<li>Investors have seen all this before and pull the plug.</li>
+</ul>
+<p>Along that timeline, there’s a “technical watershed” after which there is no hope of rescuing the codebase, but before then, there’s a “political watershed” after which the decisions required to rescue it will not be made because they would be so expensive that denial is the more likely response.</p>
+<h2 data-number="2.5" id="common-dysfunctional-mechanisms"><span class="header-section-number">2.5</span> Common dysfunctional mechanisms</h2>
+<p>Disappoint customer -&gt; Intimidated by their frustration -&gt; Unrealistic promises -&gt; Vicious circle</p>
+<p>Deadlines impossible -&gt; Rushed devs -&gt; Tech debt -&gt; Unexpected rework -&gt; Vicious circle</p>
+<p>Verbose and barely understood code -&gt; Frustrated devs -&gt; Experts quit -&gt; Hire newbies -&gt; Vicious circle</p>
+<p>Top dev made team lead -&gt; Admin duties -&gt; Less tech leadership</p>
+<p>POs too busy to plan long term -&gt; Customers request the unexpected -&gt; Replanning -&gt; Vicious circle</p>
+<p>POs too busy to write good tickets -&gt; Unforeseen edge cases -&gt; Inaccurate estimation -&gt; Impossible deadlines</p>
+<p>PM/PO distinction unclear -&gt; mixed messages to customer</p>
+<p>No testers -&gt; devs marking own exam papers and POs overloaded.</p>
+<p>Top management sees only customer mood -&gt; Tech debt.</p>
+<h1 data-number="3" id="what-is-a-development-process-for"><span class="header-section-number">3</span> What is a development process for?</h1>
+<h2 data-number="3.1" id="not-developer-choreography"><span class="header-section-number">3.1</span> Not developer choreography</h2>
+<p>They’re already constrained and will be most efficient if not molested.</p>
+<p>Roman army chessboard formation analogy (impresses emperors and enemies, but goes to pot when the whistle blows.)</p>
+<p>Devs must do things to support other business functions, but minimise this and be flexible.</p>
+<h2 data-number="3.2" id="contract-formation"><span class="header-section-number">3.2</span> Contract formation</h2>
+<p>Avoid blank cheques and flying pigs.</p>
+<p>Fix the timescale (so you can book other customers in) but allow flexibility in the scope.</p>
+<p>Only commit to the bare essentials but strive for luxury features, perhaps for a higher price.</p>
+<p>Make sure POs and devs vouch for the feasibility and PMs have calculated the timescale or added loads of contingency.</p>
+<h2 data-number="3.3" id="capacity-planning"><span class="header-section-number">3.3</span> Capacity planning</h2>
+<p>Make sure staff are available at the times they’re booked to customers.</p>
+<h2 data-number="3.4" id="creating-a-roadmap"><span class="header-section-number">3.4</span> Creating a roadmap</h2>
+<p>Important for controlling future offering.</p>
+<p>Have one, or be steered by the customer (who doesn’t have to own your code.)</p>
+<p>Allow for scope trimming (project management triangle.)</p>
+<h2 data-number="3.5" id="predicting-rates-of-progress"><span class="header-section-number">3.5</span> Predicting rates of progress</h2>
+<p>Should be a mathematically correct method based on evidence.</p>
+<p>Scrum does not meet that standard.</p>
+<h2 data-number="3.6" id="being-trusted-by-customers"><span class="header-section-number">3.6</span> Being trusted by customers</h2>
+<p>Don’t make digital promises: expose probabilities instead.</p>
+<h2 data-number="3.7" id="controlling-tech-debt"><span class="header-section-number">3.7</span> Controlling tech debt</h2>
+<p>Purge any methodology that incentivises devs to cut corners:</p>
+<ul>
+<li>Devs should not know deadlines
+<ul>
+<li>(Assumes scope-trimming decisions made by PMs/customers (POs having set the options in advance.)</li>
+</ul></li>
+<li>No sprint goals, therefore no sprints</li>
+</ul>
+<p>Onus is on PMs to predict implementation times, not on devs to run after them.</p>
+<p>Requirements gate should protect codebase.</p>
+<p>Devs should make quantitative case for refactorings.</p>
+<h2 data-number="3.8" id="retaining-staff"><span class="header-section-number">3.8</span> Retaining staff</h2>
+<p>Devs are more often the factor that limits revenue than customers.</p>
+<p>Extreme ramp-up times for non-trivial projects, so churn is lethal.</p>
+<p>Employee engagement.</p>
+<h1 data-number="4" id="roadmap-preparation-by-pos"><span class="header-section-number">4</span> Roadmap preparation by POs</h1>
+<p>Do what’s in your own interest. The customer is a means to an end.</p>
+<p>Roadmap is:</p>
+<ul>
+<li>Long term: problems people would like solved, no solutionizing.</li>
+<li>Short term: tickets for devs.</li>
+<li>Mid term: solutionizing phase: negotiation between customers and devs facilitated by PO.</li>
+</ul>
+<p>Needed for:</p>
+<ul>
+<li>Controlling long term product evolution.</li>
+<li>Fending off ad-hoc customer requests.</li>
+<li>Informing devs of long term requirements to support architecture decisions.</li>
+<li>Staffing and capacity planning.</li>
+<li>Not pitching for business you can’t deliver.</li>
+<li>Flexing scope (luxury) rather than quality or schedule.</li>
+</ul>
+<p>Roadmap items should offer a range of luxury levels. Customer sees roadmap and is motivated to keep pace with it, which means they agree to reduce luxury level when things take longer than expected. Option of cutting quality or magically working faster is not entertained, although postponement of whole roadmap might be.</p>
+<h2 data-number="4.1" id="pos"><span class="header-section-number">4.1</span> POs</h2>
+<p>Roadmap is driven by people with domain and product knowledge.</p>
+<p>Define POs as people with that knowledge.</p>
+<p>Other duties requiring that knowledge (which POs will try to delegate in a later chapter):</p>
+<ul>
+<li>Reviewing finished stories</li>
+<li>Receiving customer requests and saying:
+<ul>
+<li>We have that already</li>
+<li>It’s on the roadmap</li>
+<li>We’ll think about it</li>
+<li>Not gonna do it</li>
+</ul></li>
+<li>Preparing training material</li>
+</ul>
+<p>but not:</p>
+<ul>
+<li>Estimating completion dates (that’s PMs)</li>
+<li>Testing releases (that’s testers)</li>
+</ul>
+<h2 data-number="4.2" id="solutionizing-process"><span class="header-section-number">4.2</span> Solutionizing Process</h2>
+<p>Assume the roadmap is notionally ordered in all three terms. Devs will use that to make assumptions about what’s been done by the time the task of interest will be attempted.</p>
+<p>Look for practical solutions that maximise customer satisfaction whilst minimising disruption of codebase. (Refactorings should consider entire roadmap.)</p>
+<p>Involve all customers who might want the feature.</p>
+<p>Involve testers who’ll ask about edge cases and force the spec to be expressed unambiguously.</p>
+<p>Expect devs to invent simpler solutions after apparent finalisation.</p>
+<p>Design solutions whose luxury level can be trimmed when under deadline pressure.</p>
+<h3 data-number="4.2.1" id="to-detailed-tickets"><span class="header-section-number">4.2.1</span> To detailed tickets</h3>
+<p>Virtues and use of Gannt charts:</p>
+<ul>
+<li>Plot complex sequential dependencies</li>
+<li>Accept more work to decouple domino runs</li>
+<li>See how many devs can parallelise</li>
+<li>Interpret like a weather forecast (uncertainty increases with lead time)</li>
+</ul>
+<p>The art of technical writing (and chatting): see miscellaneous chapter.</p>
+<h3 data-number="4.2.2" id="non-functional-requirements"><span class="header-section-number">4.2.2</span> Non-functional requirements</h3>
+<p>Everybody thinks they need 99.99% availability and CIA-proof security. Are you as safety-critical as, say, an ambulance station?</p>
+<p>What do you get punished for? Downtime? Bugs? Neither?</p>
+<p>What’s likely to bring you down? Internet failures, or your own bugs?</p>
+<p>How much performance are you prepared to waste in order to cope with load?</p>
+<p>How much would it cost to just throw money at a load problem?</p>
+<p>Do you test for performance complexity?</p>
+<h1 data-number="5" id="testers-as-assistant-pos"><span class="header-section-number">5</span> Testers as assistant POs</h1>
+<p>POs were defined as those with domain and product knowledge.</p>
+<p>They are very busy with roadmap preparation. Can we relieve them of the “other duties” above?</p>
+<p>Yes, using testers, but the POs must file testable tickets. That’s also good because:</p>
+<ul>
+<li>POs forced to think through the edge cases early</li>
+<li>Devs’ estimates are better informed</li>
+</ul>
+<p>Testers grow into POs cos they’re learning domain and product knowledge.</p>
+<p>A PO with the skills and mindset of a tester would be formidable.</p>
+<h1 data-number="6" id="estimation-by-pms"><span class="header-section-number">6</span> Estimation by PMs</h1>
+<p>Good estimation is the precondition of all best practices:</p>
+<ul>
+<li>Under deadline pressure, nothing strategic gets done.</li>
+<li>Under constant deadline pressure, codebase collapse is inevitable.</li>
+</ul>
+<p>PM’s domain. POs not involved. PMs don’t need much domain or product knowledge, but they might find a statistics course useful.</p>
+<p>There are no commitments. There are probabilities, which are more useful to everybody involved.</p>
+<p>Weather forecast anecdote on the folly of digitizing probabilities.</p>
+<h2 data-number="6.1" id="little-oracle"><span class="header-section-number">6.1</span> Little Oracle</h2>
+<p>Looks at a ticket in isolation (with hypothetical field value overrides) and returns mean and variance of probability distribution of implementation time.</p>
+<p>Made by data mining past tickets and source control.</p>
+<p>(Measuring implementation time of past tickets is not trivial, but we can start crude and refine later.)</p>
+<p>Likely predictive fields (this is just a guess - only the stats can decide):</p>
+<ul>
+<li>Story points (one would hope)</li>
+<li>Volatility: dev-assigned t-shirt size of variance: “beaten track” vs. “experimental” vs. “utter mystery”</li>
+<li>Assignee: some are slower than others, maybe cos they’re more strategic or diligent</li>
+<li>Zones (i.e. directories) of codebase: spaghetti modules</li>
+<li>Familiarity of assignee in zones: mined as work done there by that dev in the recent past</li>
+</ul>
+<p>(Keep richness of model within Hoeffding’s inequality; 10 * coefficients &lt; training points.)</p>
+<p>But how early can these fields be populated? In time for estimation purposes?</p>
+<p>Scrum leaves assignee until the last minute, and that’s not helpful for estimation.</p>
+<p>Little oracle can help teams plan by advising how long a ticket might take according to who attempts it.</p>
+<h2 data-number="6.2" id="big-oracle"><span class="header-section-number">6.2</span> Big Oracle</h2>
+<p>Considers a set of tickets and a release date and returns the probability of all those tickets being completed by then.</p>
+<p>Uses little oracle (which only returns durations), but needs to know start date for each ticket.</p>
+<p>That’s the completion date of that dev’s previous ticket, so we must know the assignment of tickets to devs and their ordering, a.k.a. their “in-trays”.</p>
+<p>Should know about holidays and equivalent interruptions like workshops.</p>
+<h3 data-number="6.2.1" id="in-trays"><span class="header-section-number">6.2.1</span> In-trays</h3>
+<p>Take an ordered backlog. Assign some tickets to some devs. Filter on an assignee, retaining order. That’s an in-tray.</p>
+<p>“Tetris” assignment method:</p>
+<ul>
+<li>Pull a ticket from the ordered backlog.</li>
+<li>Assign it to whoever will finish it first considering:
+<ul>
+<li>how much work they already have in their in-tray,</li>
+<li>how long the little oracle thinks that ticket will take them.</li>
+</ul></li>
+<li>Repeat until all in-trays cover the timescale of interest for estimation.</li>
+</ul>
+<p>(That makes no attempt to disseminate monopolised code knowledge, but see the chapter on skills management.)</p>
+<p>If teams use some defined method like the above, it can be simulated or automated. Human overrides would improve the planning prognosis, so planning based on the simulation gives a valid worst case.</p>
+<p>Sequential dependencies between tickets can be dealt with by reordering the backlog to minimise the chance of overlap. The big oracle will estimate that chance.</p>
+<h3 data-number="6.2.2" id="release-planner"><span class="header-section-number">6.2.2</span> Release Planner</h3>
+<p>By a given release date, a PM may hope that each dev gets through a prefix of their in-tray.</p>
+<p>To get the probability of success:</p>
+<ul>
+<li>The mean implementation time of the prefix is the sum of the means of the tickets in that prefix.
+<ul>
+<li>(The truth of this is a desideratum for the method of measuring implementation time.)</li>
+</ul></li>
+<li>Similarly add the variances.</li>
+<li>Start from when work started on the dev’s current ticket.</li>
+<li>Use normal distribution (that error is inconsequential) with that mean and variance to read off the probability of completion before the release date.</li>
+<li>Treat different devs as independent and multiply the probabilities.
+<ul>
+<li>(It’s assumed that devs minimised the probability of overlapping sequential dependencies when planning, otherwise an advanced big oracle can model that probability.)</li>
+</ul></li>
+</ul>
+<p>PM can mark a ticket as “promised”, which discourages teams from rearranging in-trays to the detriment of such a ticket.</p>
+<p>Won’t-do closure is the same as completion for planning purposes.</p>
+<p>Similar tool for fixed-scope, variable-date releases.</p>
+<h2 data-number="6.3" id="the-world-changes"><span class="header-section-number">6.3</span> The World Changes</h2>
+<p>… when the PM shares the release planner with the customer and invites them to choose their own risks. (The ordering has already been agreed via POs)</p>
+<p>The customer would initially choose too many tickets but notice the probability plummet. Now, instead of haggling oppositionally, the PM and customer are working together against the maths of life. The brutal behaviour of probabilities is made plain to both, and past failures seem more understandable. The customer is forced to decide which tickets are truly urgent and which are gold plating.</p>
+<p>If forced to commit to a deadline, mouth the words, but state the probabilities as well. Expose changes of probability early. Gradually, they should learn that the probabilities are more helpful to them than doubtful commitments.</p>
+<h2 data-number="6.4" id="huge-oracle"><span class="header-section-number">6.4</span> Huge Oracle</h2>
+<p>Sees further into the future by aggregating tickets and people.</p>
+<p>Connects customers and suppliers in a single system where estimation is transparent.</p>
+<p>Unified contract process for large and small scale activities.</p>
+<p>Start with a “parent” field in tickets which identifies the ticket that motivated this one.</p>
+<h1 data-number="7" id="development"><span class="header-section-number">7</span> Development</h1>
+<p>Must retain devs (might take several years to ramp up newbies.)</p>
+<p>Devs have lots to do besides chasing deadlines:</p>
+<ul>
+<li>Meetings</li>
+<li>Architecture planning</li>
+<li>Bug triage and fix</li>
+<li>Devops, build train</li>
+<li>Customer support</li>
+<li>Data curation?</li>
+<li>Tech debt reduction, unit testing</li>
+<li>Tech lead duties (if they exist)</li>
+<li>Code reviews</li>
+<li>One to ones</li>
+<li>Documenting code</li>
+<li>Helping newbies</li>
+<li>Marking recruitment tests</li>
+<li>Performance reviews</li>
+<li>Guilds?</li>
+</ul>
+<p>Therefore, much less than 50% of dev time will go on feature development.</p>
+<h2 data-number="7.1" id="organisation"><span class="header-section-number">7.1</span> Organisation</h2>
+<p>Leadership exists but is not digital.</p>
+<p>Team boundaries become module and coding-culture boundaries. Use exchange schemes to limit cultural disconnect.</p>
+<p>Safe and unsafe specialisation.</p>
+<p>Testers should not be embedded in dev teams but assist POs.</p>
+<p>Teams should be strict in policing POs into writing quality tickets.</p>
+<p>No single tech lead. Use admin staff for admin.</p>
+<p>Correct leadership style:</p>
+<ul>
+<li>Challenge and support.</li>
+<li>Socratic teaching method (ask, don’t tell.)</li>
+<li>Focus on pivotal questions.</li>
+<li>Consult knowledgeable or affected people.</li>
+<li>Escalation gateway and mediator.</li>
+</ul>
+<h2 data-number="7.2" id="rituals"><span class="header-section-number">7.2</span> Rituals</h2>
+<p>Sprints are both harmful and futile, but retros are popular.</p>
+<p>No afternoon meetings for devs - coding only. Rare exceptions tolerated.</p>
+<p>PO time belongs to devs in the morning so they must meet customers and each other in afternoons.</p>
+<h3 data-number="7.2.1" id="refinement"><span class="header-section-number">7.2.1</span> Refinement</h3>
+<p>PO’s meet teams for regular refinement meetings which alternate with PO-customer meetings. Could have a daily slot of up to 60 minutes after standup.</p>
+<p>Refinement demand is patchy (high when planning a big new feature) so that 60 minutes might need to be adjusted. If afternoons are to be used for workshops, tell the estimation machine about the resulting standstill using tickets or holidays.</p>
+<p>Refined tickets have story points, volatility and code zone set. Or whatever the current estimation algorithm calls for.</p>
+<p>Assignment doesn’t need to be set this early cos the estimation machine can simulate tetris.</p>
+<p>Instead of story points, this process would be equally happy with devs estimating in days. Either way it’ll be calibrated. But devs feel less exposed using story points.</p>
+<h3 data-number="7.2.2" id="assignment"><span class="header-section-number">7.2.2</span> Assignment</h3>
+<p>Estimation requires per-dev in-trays, not scrumboard or kanban.</p>
+<p>Teams have regular meetings to populate in-trays. The earliest non-closed ticket in an in-tray is implicitly in progress. Park tickets by re-ordering.</p>
+<p>Tetris process described in estimation chapter. That’s the simplest starting point, but refinements expected.</p>
+<p>Teams complain to POs when refined backlog in danger of running dry, or, PO directly responsible.</p>
+<h3 data-number="7.2.3" id="updating-tickets"><span class="header-section-number">7.2.3</span> Updating tickets</h3>
+<p>In-trays (i.e. assignee and ordering) may be rearranged by teams with impunity if it wouldn’t delay estimation of a ticket marked as promised. If it would, they still can, and a PM will be alerted.</p>
+<p>Story points, volatility and code zone should be updated by devs whenever new, relevant information comes to light. The ticket tracker must remember the full history of all fields for consumption by the estimation machine.</p>
+<p>There could also be a percentage progress field, but we shouldn’t ask devs to update it every day, rather, it’ll count down automatically and the assignee may adjust it if it looks wrong.</p>
+<p>PMs will be alerted if a deadline is endangered by any change (perhaps of a ticket before the promised one in the same in-tray.)</p>
+<p>The rest of the time, the estimation machine can infer progress.</p>
+<h3 data-number="7.2.4" id="stand-ups"><span class="header-section-number">7.2.4</span> Stand-ups</h3>
+<p>Morning stand-ups:</p>
+<ul>
+<li>Hard to predict how long a discussion will ramble for, so hard to decide to break-out</li>
+<li>So agenda should be:
+<ol type="1">
+<li>Anybody blocked?</li>
+<li>Anybody know something that affects what somebody else should be doing? (Adjourn after this if over 30 minutes.)</li>
+<li>Anything to demo to PO? (Even with sprints, these should be ASAP upon completion.)</li>
+<li>Any gossip?</li>
+</ol></li>
+</ul>
+<p>If somebody wants a breakout meeting that requires just a subset of a team, the standup is the least appropriate context in which to arrange it. They can arrange a meeting in the diary or chat system.</p>
+<p>PMs may turn up to standups to ask for estimate updates on tickets.</p>
+<h3 data-number="7.2.5" id="demos"><span class="header-section-number">7.2.5</span> Demos</h3>
+<p>If the PO doesn’t turn up regularly to standups, they are summoned by any ticket awaiting demo. Dev’s need fast feedback. POs may not book other meetings over standup time.</p>
+<h1 data-number="8" id="knowledge-management"><span class="header-section-number">8</span> Knowledge Management</h1>
+<h2 data-number="8.1" id="nuturing-and-using-domain-and-product-knowledge"><span class="header-section-number">8.1</span> Nuturing and using domain and product knowledge</h2>
+<p>PO vs PM split: tasks requiring / people possessing domain and product knowledge.</p>
+<p>Testers grow into POs.</p>
+<p>Must be T-shaped in domain/product, so must probably deal with all customers of their specialty.</p>
+<h2 data-number="8.2" id="coding-knowledge-monopolies"><span class="header-section-number">8.2</span> Coding knowledge monopolies</h2>
+<p>How they arise so fast.</p>
+<p>High cost of combating them (slows both expert and trainee.)</p>
+<p>Must detect and target only the important ones.</p>
+<p>Data mining for estimation also reveals monopolies.</p>
+<h2 data-number="8.3" id="controversy-is-the-mother-of-invention"><span class="header-section-number">8.3</span> Controversy is the mother of invention</h2>
+<p>Hire a mixture of Belbin types.</p>
+<p>Don’t standardise too early.</p>
+<p>Mix up emerging style ghettos.</p>
+<p>Don’t award big top hats. (Leaders can lead without them.)</p>
+<h2 data-number="8.4" id="employee-engagement"><span class="header-section-number">8.4</span> Employee Engagement</h2>
+<p>See the web site first: advantages (esp. staff retention), four enablers.</p>
+<p>Tells management where the path of least resistance lies.</p>
+<p>Build consultation into dev process: escalate issues from retros expecting response</p>
+<h1 data-number="9" id="the-transition"><span class="header-section-number">9</span> The Transition</h1>
+<p>How’s the historical data set? (Start crude - it can’t be worse than totting up story points.)</p>
+<p>How’s the legacy of obligations? (Denial doesn’t get work done.)</p>
+<p>How easily can you sway your customers? (Always tell them the probabilities and wait for the penny to drop.)</p>
+<p>How wedded are the staff to their existing habits:</p>
+<ul>
+<li>Devs to scrum ceremonies and entitlements</li>
+<li>PMs/POs to monopolising customer contact</li>
+<li>Leadership to “customer is king” mindset</li>
+<li>Naïve estimation calculations</li>
+<li>Fear of the statistics machine: stress that slowness might be diligence</li>
+</ul>
+<h1 data-number="10" id="miscellaneous-topics"><span class="header-section-number">10</span> Miscellaneous Topics</h1>
+<h2 data-number="10.1" id="remote-working"><span class="header-section-number">10.1</span> Remote working</h2>
+<p>Advantages:</p>
+<ul>
+<li>Avoid commuting overhead</li>
+<li>Meetings better:
+<ul>
+<li>Less disturbance to and from uninvolved colleagues</li>
+<li>Everybody can screen share</li>
+<li>Mixture of f2f and remote unfair</li>
+</ul></li>
+<li>Bigger job applicant pool -&gt; can specialise in emerging tech</li>
+<li>Environment</li>
+</ul>
+<p>Problem:</p>
+<ul>
+<li>No facetime -&gt; less team spirit, lonely</li>
+</ul>
+<p>Solution:</p>
+<ul>
+<li>Let people travel for facetime activities, but not for solitary work or standard meetings</li>
+</ul>
+<p>Examples of facetime events:</p>
+<ul>
+<li>Conference format: stands where people animate discussions of topics they care about</li>
+<li>Special interest groups, e.g., guilds, kill the company exercises</li>
+<li>Random groupings</li>
+</ul>
+<h2 data-number="10.2" id="architecture"><span class="header-section-number">10.2</span> Architecture</h2>
+<p>Circle of life:</p>
+<ul>
+<li>Obsolescence of whole project under market changes, hopefully caused by this project.</li>
+<li>Obsolescence of codebase under tech innovations.</li>
+<li>Obsolescence of modules under large refactorings.</li>
+<li>Obsolescence of functions under small refactorings.</li>
+</ul>
+<p>Architecture should expect the above.</p>
+<p>Data first:</p>
+<ul>
+<li>Is it all there, and up to date</li>
+<li>Push or pull, recovery</li>
+<li>Eliminate redundancy</li>
+<li>Make sure everybody can draw the data model blindfold</li>
+</ul>
+<p>Don’t splurge process boundaries:</p>
+<ul>
+<li>The processes just end up modelling each other and fretting about connectivity.</li>
+<li>1 out of 10 processes down = system down.</li>
+</ul>
+<p>Draw your acyclic build dependency graph.</p>
+<p>It’s nonesense that high level interfaces can or should remain fixed.</p>
+<p>No need to pre-empt imaginary future requirements. Keep code light and disposable instead.</p>
+<p>Don’t write loads of code in terms of generalisations about the domain or architecture. Keep most code project-agnostic.</p>
+<p>Only handle error cases as a last resort:</p>
+<ul>
+<li>There might be a useful interpretation of the case</li>
+<li>Rule it out in the data model</li>
+<li>Don’t repeatedly check at every level of the call stack, document assumptions instead</li>
+<li>Don’t check what you can’t treat: consider UDP</li>
+</ul>
+<h2 data-number="10.3" id="hiring"><span class="header-section-number">10.3</span> Hiring</h2>
+<p>Usually limited by devs, not customers, so continuously hire good ones (bar raised and lowered by budget) and train them before the customer inquiries arise.</p>
+<p>Test for:</p>
+<ul>
+<li>Knowledge</li>
+<li>Aptitude</li>
+<li>Psychology</li>
+</ul>
+<h2 data-number="10.4" id="technical-writing"><span class="header-section-number">10.4</span> Technical Writing</h2>
+<ul>
+<li>State context.</li>
+<li>More nouns than pronouns.</li>
+<li>No passive tense.</li>
+<li>Indicate the question in the answer.</li>
+<li>Avoid garden path sentences:
+<ul>
+<li>Don’t use words that might be nouns or verbs (except in US where there’d be none left.)</li>
+</ul></li>
+<li>Suspect all generalisations, even this one.</li>
+</ul>
+<h1 data-number="11" id="appendix-collection-of-scrum-fallacies"><span class="header-section-number">11</span> Appendix: Collection of Scrum Fallacies</h1>
+<h2 data-number="11.1" id="about-customers"><span class="header-section-number">11.1</span> About customers</h2>
+<h3 data-number="11.1.1" id="incompatible-with-billing"><span class="header-section-number">11.1.1</span> Incompatible with billing</h3>
+<p>Customers are rarely prepared to do scrum. It can only happen under time and materials billing, which implies that the customer owns the codebase, in which case, there’s no customer relationship to speak of other than some monthly timesheets. These are the circumstances under which the supplier needs no process.</p>
+<p>Fixed price work needs a waterfall spec and timescale. Result is internal “phony scrum.”</p>
+<h3 data-number="11.1.2" id="conflict-of-interest"><span class="header-section-number">11.1.2</span> Conflict of interest</h3>
+<p>Offering a customer a scrum-like cycle under a fixed price contract invites abuse. (Everything is MVP.)</p>
+<h3 data-number="11.1.3" id="utility-of-predictions-only-2-3-weeks-ahead"><span class="header-section-number">11.1.3</span> Utility of predictions only 2-3 weeks ahead</h3>
+<p>Few customers care about that granularity, and if they micromanage the supplier to that degree, then the trust is already broken.</p>
+<h2 data-number="11.2" id="about-the-what"><span class="header-section-number">11.2</span> About the “what”</h2>
+<h3 data-number="11.2.1" id="po-and-customer-dictate-full-spec-to-devs"><span class="header-section-number">11.2.1</span> PO and customer dictate full spec to devs</h3>
+<p>Devs must advise about which solutions are easy</p>
+<h3 data-number="11.2.2" id="recipe-for-tech-debt"><span class="header-section-number">11.2.2</span> Recipe for tech debt</h3>
+<p>No long term plan.</p>
+<p>No requirements gating process.</p>
+<p>No room for refactoring.</p>
+<h3 data-number="11.2.3" id="devs-have-last-word-on-architecture"><span class="header-section-number">11.2.3</span> Devs have last word on architecture</h3>
+<p>That depends on the customer</p>
+<h2 data-number="11.3" id="about-the-when"><span class="header-section-number">11.3</span> About the “when”</h2>
+<h3 data-number="11.3.1" id="the-sprint-commitment"><span class="header-section-number">11.3.1</span> The Sprint Commitment</h3>
+<p>Digitising probabilities is self-deception. Don’t ignore variance</p>
+<p>Devs shouldn’t be motivated to cut corners.</p>
+<h3 data-number="11.3.2" id="probability-of-hitting-sprint-goal"><span class="header-section-number">11.3.2</span> Probability of hitting sprint goal</h3>
+<p>If loaded to average velocity, then well below 50%:</p>
+<ul>
+<li>It’s an average, so (in equilibrium) the probability of scoring fewer points equals that of scoring more.</li>
+<li>If you score less, you didn’t hit the sprint goal.</li>
+<li>If you score more, perhaps those were different tickets from the promised ones.</li>
+</ul>
+<p>If 10 tickets in a sprint each independently have P=90% (no ticket has more), then the sprint goal is at 35%. (In fact they can only be independent if there are 10 devs. The point is that people intuitively approximate 90% to 100% and accumulate this huge error over a set of tickets.)</p>
+<h3 data-number="11.3.3" id="pointing-without-technical-analysis"><span class="header-section-number">11.3.3</span> Pointing without technical analysis</h3>
+<p>Edge cases and architectural difficulties not anticipated</p>
+<h3 data-number="11.3.4" id="dancing-to-the-gong"><span class="header-section-number">11.3.4</span> Dancing to the gong</h3>
+<p>No power in the world can make tickets start and end in sync.</p>
+<p>But devs can fake it:</p>
+<ul>
+<li>Close the ticket and file another for the unhandled edge cases</li>
+<li>Neglect the unit tests</li>
+<li>Waste time after completing tickets to hold velocity down.</li>
+</ul>
+<h3 data-number="11.3.5" id="planned-vs.-surprise-points"><span class="header-section-number">11.3.5</span> Planned vs. surprise points</h3>
+<p>Surprise points that arise after planning:</p>
+<ul>
+<li>Spun off from prematurely closed tickets</li>
+<li>Caused when stumbling over tech debt</li>
+<li>Filed by devs upon finding bugs</li>
+</ul>
+<p>Velocity includes both planned and surprise points, so useless for forward planning.</p>
+<h3 data-number="11.3.6" id="discards-true-start-and-finish-times"><span class="header-section-number">11.3.6</span> Discards true start and finish times</h3>
+<p>… so useless for mining durations.</p>
+<p>Accident of ticket finishing just before or just after sprint end causes huge noise in velocity.</p>
+<p>That noise means you must wait several sprints to deduce a systematic change.</p>
+<h3 data-number="11.3.7" id="degradation-of-historical-data"><span class="header-section-number">11.3.7</span> Degradation of historical data</h3>
+<ul>
+<li>Implementation time records distorted by incentive to fake sprint success.</li>
+<li>Story points distorted by legality of adjustment after planning.</li>
+</ul>
+<h3 data-number="11.3.8" id="no-guidance-on-pointing-under-uncertainty"><span class="header-section-number">11.3.8</span> No guidance on pointing under uncertainty</h3>
+<ul>
+<li>Should they go by the mean or worst case?</li>
+<li>What to do with initial investigation tickets?</li>
+</ul>
+<h3 data-number="11.3.9" id="short-sprints-ought-to-be-predictable"><span class="header-section-number">11.3.9</span> Short sprints ought to be predictable</h3>
+<p>Russian roulette is equally dangerous however often you count the score.</p>
+<h3 data-number="11.3.10" id="clone-army-assumption"><span class="header-section-number">11.3.10</span> Clone-army assumption</h3>
+<p>Happy to load sprint entirely with tickets only one dev can do</p>
+<p>Velocity is just per-team although teams maximise their ability gradient (every team needs a top gun and must share newbie load.)</p>
+<p>To believe that lucky and unlucky tickets balance out in a sprint, you have to deny that a dev is more expert than others at the very ticket they have in progress.</p>
+<h3 data-number="11.3.11" id="story-points-as-unit-of-time"><span class="header-section-number">11.3.11</span> Story points as unit of time</h3>
+<p>They claim story points are about complexity rather than time, but they use it like time anyway when loading sprints.</p>
+<p>Days in terms of points is not a y=mx+0 function.</p>
+<h2 data-number="11.4" id="about-the-lifestyle"><span class="header-section-number">11.4</span> About the lifestyle</h2>
+<h3 data-number="11.4.1" id="sanctity-of-the-sprint"><span class="header-section-number">11.4.1</span> Sanctity of the sprint</h3>
+<ul>
+<li>People have to put fires out.</li>
+<li>A ticket in progress might need another team to flip a switch (before 1-2 sprints pass.)</li>
+<li>Tickets get blocked and go on hold.</li>
+<li>Tech debt is uncovered.</li>
+<li>Ideas change.</li>
+<li>Nightclub rules is just bureaucratic life-support for a failed tracking method.</li>
+</ul>
+<h3 data-number="11.4.2" id="likes-to-see-linearly-descending-burndown"><span class="header-section-number">11.4.2</span> Likes to see linearly descending burndown</h3>
+<p>Why? A steady state is preferable.</p>
+<h3 data-number="11.4.3" id="prioritise-the-small-ticket-near-sprint-end"><span class="header-section-number">11.4.3</span> Prioritise the small ticket near sprint end</h3>
+<p>Absurd usurping of priorities</p>
+<h3 data-number="11.4.4" id="subdivide-tickets-to-fit-in-sprint"><span class="header-section-number">11.4.4</span> Subdivide tickets to fit in sprint</h3>
+<p>This is just for scrum’s sake but it clouds the relationship between tickets and deliverables.</p>
+<p>There are natural divisions, but they often only become clear during coding.</p>
+<h3 data-number="11.4.5" id="protecting-devs-from-blame."><span class="header-section-number">11.4.5</span> Protecting devs from blame.</h3>
+<p>Blame is not what worrys them. Tech debt is.</p>
+<h3 data-number="11.4.6" id="protecting-devs-from-moving-goal-posts."><span class="header-section-number">11.4.6</span> Protecting devs from moving goal posts.</h3>
+<p>It’s usually the devs who figure out that the goalposts need to move.</p>
+<h3 data-number="11.4.7" id="need-sprints-to-have-retros"><span class="header-section-number">11.4.7</span> Need sprints to have retros</h3>
+<p>Retros are just moments of introspection. Monks have been dedicating their entire lives to introspection since long before sprints were invented.</p>
+<h3 data-number="11.4.8" id="non-technical-scrum-master"><span class="header-section-number">11.4.8</span> Non-technical scrum-master</h3>
+<p>Usually means PO ends up serving as scrum-master.</p>
+<h3 data-number="11.4.9" id="breaking-out-of-stand-up"><span class="header-section-number">11.4.9</span> Breaking out of stand-up</h3>
+<p>You can’t tell how much longer a discussion will go on for and it’s hard to decide to exclude people from a discussion. So go in order of urgency, not people.</p>
+<h3 data-number="11.4.10" id="delayed-response"><span class="header-section-number">11.4.10</span> Delayed response</h3>
+<p>Average 1.5 sprints before the simplest request is delivered. Turns little hiccups into crises.</p>
+<h2 data-number="11.5" id="scrum-variations"><span class="header-section-number">11.5</span> Scrum variations</h2>
+<h3 data-number="11.5.1" id="everybody-is-invited-to-every-standup-and-demo-safe"><span class="header-section-number">11.5.1</span> Everybody is invited to every standup and demo (SAFe)</h3>
+<p>Minor advantage for huge time limitation.</p>
+<h3 data-number="11.5.2" id="shape-up-process"><span class="header-section-number">11.5.2</span> “Shape Up” process</h3>
+<p>Doubles down on worst mistakes of scrum:</p>
+<ul>
+<li>Bigger gong</li>
+<li>Customer assumed pliable</li>
+<li>Wild assumptions about nature of project, esp. size of deliverable features</li>
+<li>Nobody touch the fire extinguisher</li>
+</ul>
+<p>Favours flexing scope over schedule or quality, but fails to create the conditions that allow this, namely a prepared range of luxury levels.</p>                    
+                </div>
+            </div>
+
+            <script src="https://vjs.zencdn.net/5.4.4/video.js"></script>
+        </div>
+    </body>
+</html>
