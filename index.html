@@ -658,10 +658,10 @@ function render(root, path) {
         derefview(renderer[r = path.shift()]) (root[r], path); //Recurse into relevant view mode with decapitated root and path
     }},
     Printable: function (root) { return function (renderer) {
-      return foreach(renderer, function(k) {
-        return "" + 
-          el('h3', { }, localKey(k)) +
-          derefview(renderer[k]) (root[k]); //Decapitate root but path irrelevant in printable mode anyway
+        return el('p', { style:'text-align:center' }, 'Please see interactive version <a href="https://adrianmay.github.io">here</a>.') + foreach(renderer, function(k) {
+          return "" + 
+            el('h3', { }, localKey(k)) +
+            derefview(renderer[k]) (root[k]); //Decapitate root but path irrelevant in printable mode anyway
       });
     }},
   }
