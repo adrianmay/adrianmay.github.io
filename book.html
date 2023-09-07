@@ -180,7 +180,7 @@
 <p>Might fail to fear complexity.</p>
 <h2 data-number="2.4" id="tech-debt"><span class="header-section-number">2.4</span> Tech debt</h2>
 <p>It’s deadly.</p>
-<p>It is literally a debt, so calculate the interest rate and tell the CFO.</p>
+<p>It is literally a debt, so calculate the interest rate (compare cost of daily impediment with cost of refactoring), tell the CFO, and watch them go ballistic.</p>
 <p>Want to keep codebase alive until rendered obsolete by changes in market or tech.</p>
 <h3 data-number="2.4.1" id="the-gory-details-of-codebase-collapse"><span class="header-section-number">2.4.1</span> The gory details of codebase collapse</h3>
 <p>(% indicates measurable symptom)</p>
@@ -218,25 +218,25 @@
 </ul>
 <p>Along that timeline, there’s a “technical watershed” after which there is no hope of rescuing the codebase, but before then, there’s a “political watershed” after which the decisions required to rescue it will not be made because they would be so expensive that denial is the more likely response.</p>
 <h2 data-number="2.5" id="common-dysfunctional-mechanisms"><span class="header-section-number">2.5</span> Common dysfunctional mechanisms</h2>
-<p>Disappoint customer -&gt; Intimidated by their frustration -&gt; Unrealistic promises -&gt; Vicious circle</p>
+<p>Disappoint customer -&gt; Supplier intimidated by their frustration -&gt; Unrealistic promises -&gt; Vicious circle</p>
 <p>Deadlines impossible -&gt; Rushed devs -&gt; Tech debt -&gt; Unexpected rework -&gt; Vicious circle</p>
 <p>Verbose and barely understood code -&gt; Frustrated devs -&gt; Experts quit -&gt; Hire newbies -&gt; Vicious circle</p>
 <p>Top dev made team lead -&gt; Admin duties -&gt; Less tech leadership</p>
 <p>POs too busy to plan long term -&gt; Customers request the unexpected -&gt; Replanning -&gt; Vicious circle</p>
-<p>POs too busy to write good tickets -&gt; Unforeseen edge cases -&gt; Inaccurate estimation -&gt; Impossible deadlines</p>
-<p>PM/PO distinction unclear -&gt; mixed messages to customer</p>
-<p>No testers -&gt; devs marking own exam papers and POs overloaded.</p>
+<p>POs too busy to write good tickets -&gt; Unforeseen edge cases and misinterpretation of requrements -&gt; Inaccurate estimation -&gt; Impossible deadlines</p>
+<p>PM/PO distinction unclear -&gt; Mixed messages to customer</p>
+<p>No testers -&gt; Devs marking own exam papers and POs overloaded.</p>
 <p>Top management sees only customer mood -&gt; Tech debt.</p>
 <h1 data-number="3" id="what-is-a-development-process-for"><span class="header-section-number">3</span> What is a development process for?</h1>
 <h2 data-number="3.1" id="not-developer-choreography"><span class="header-section-number">3.1</span> Not developer choreography</h2>
-<p>They’re already constrained and will be most efficient if not molested.</p>
+<p>They’re already constrained and will be most efficient if allowed to work through their obvious duties with minimal interruption.</p>
 <p>Roman army chessboard formation analogy (impresses emperors and enemies, but goes to pot when the whistle blows.)</p>
 <p>Devs must do things to support other business functions, but minimise this and be flexible.</p>
 <h2 data-number="3.2" id="contract-formation"><span class="header-section-number">3.2</span> Contract formation</h2>
 <p>Avoid blank cheques and flying pigs.</p>
 <p>Fix the timescale (so you can book other customers in) but allow flexibility in the scope.</p>
-<p>Only commit to the bare essentials but strive for luxury features, perhaps for a higher price.</p>
-<p>Make sure POs and devs vouch for the feasibility and PMs have calculated the timescale or added loads of contingency.</p>
+<p>Only commit to the bare essentials but strive for luxury features, perhaps for a higher price. MVP means MVP.</p>
+<p>Make sure POs and devs vouch for the feasibility and PMs have calculated the timescale cleverly or added loads of contingency.</p>
 <h2 data-number="3.3" id="capacity-planning"><span class="header-section-number">3.3</span> Capacity planning</h2>
 <p>Make sure staff are available at the times they’re booked to customers.</p>
 <h2 data-number="3.4" id="creating-a-roadmap"><span class="header-section-number">3.4</span> Creating a roadmap</h2>
@@ -256,6 +256,7 @@
 <li>(Assumes scope-trimming decisions made by PMs/customers (POs having set the options in advance.)</li>
 </ul></li>
 <li>No sprint goals, therefore no sprints</li>
+<li>Avoid perfectionism with team-local leadership attitude.</li>
 </ul>
 <p>Onus is on PMs to predict implementation times, not on devs to run after them.</p>
 <p>Requirements gate should protect codebase.</p>
@@ -287,7 +288,7 @@
 <p>Define POs as people with that knowledge.</p>
 <p>Other duties requiring that knowledge (which POs will try to delegate in a later chapter):</p>
 <ul>
-<li>Reviewing finished stories</li>
+<li>Reviewing finished features</li>
 <li>Receiving customer requests and saying:
 <ul>
 <li>We have that already</li>
@@ -312,14 +313,14 @@
 <h3 data-number="4.2.1" id="to-detailed-tickets"><span class="header-section-number">4.2.1</span> To detailed tickets</h3>
 <p>Virtues and use of Gannt charts:</p>
 <ul>
-<li>Plot complex sequential dependencies</li>
-<li>Accept more work to decouple domino runs</li>
-<li>See how many devs can parallelise</li>
-<li>Interpret like a weather forecast (uncertainty increases with lead time)</li>
+<li>Plot complex sequential dependencies.</li>
+<li>Decouple domino runs of sequential dependencies, even at the cost of more work in total.</li>
+<li>See how many devs can work in parallel.</li>
+<li>Interpret like a weather forecast (uncertainty increases with lead time).</li>
 </ul>
 <p>The art of technical writing (and chatting): see miscellaneous chapter.</p>
 <h3 data-number="4.2.2" id="non-functional-requirements"><span class="header-section-number">4.2.2</span> Non-functional requirements</h3>
-<p>Everybody thinks they need 99.99% availability and CIA-proof security. Are you as safety-critical as, say, an ambulance station?</p>
+<p>Everybody thinks they need 99.999% availability and CIA-proof security. Are you as safety-critical as, say, an ambulance station?</p>
 <p>What do you get punished for? Downtime? Bugs? Neither?</p>
 <p>What’s likely to bring you down? Internet failures, or your own bugs?</p>
 <p>How much performance are you prepared to waste in order to cope with load?</p>
@@ -343,7 +344,7 @@
 </ul>
 <p>PM’s domain. POs not involved. PMs don’t need much domain or product knowledge, but they might find a statistics course useful.</p>
 <p>There are no commitments. There are probabilities, which are more useful to everybody involved.</p>
-<p>Weather forecast anecdote on the folly of digitizing probabilities.</p>
+<p>Even the user of a weather forecasting app is expected to understand probabilities, so why not PMs?</p>
 <h2 data-number="6.1" id="little-oracle"><span class="header-section-number">6.1</span> Little Oracle</h2>
 <p>Looks at a ticket in isolation (with hypothetical field value overrides) and returns mean and variance of probability distribution of implementation time.</p>
 <p>Made by data mining past tickets and source control.</p>
@@ -379,7 +380,7 @@
 </ul>
 <p>(That makes no attempt to disseminate monopolised code knowledge, but see the chapter on skills management.)</p>
 <p>If teams use some defined method like the above, it can be simulated or automated. Human overrides would improve the planning prognosis, so planning based on the simulation gives a valid worst case.</p>
-<p>Sequential dependencies between tickets can be dealt with by reordering the backlog to minimise the chance of overlap. The big oracle will estimate that chance.</p>
+<p>Sequential dependencies between tickets can be dealt with by reordering the backlog to minimise the chance of sequence violation. The big oracle will estimate that chance.</p>
 <h3 data-number="6.2.2" id="release-planner"><span class="header-section-number">6.2.2</span> Release Planner</h3>
 <p>By a given release date, a PM may hope that each dev gets through a prefix of their in-tray.</p>
 <p>To get the probability of success:</p>
@@ -406,26 +407,31 @@
 <h2 data-number="6.4" id="huge-oracle"><span class="header-section-number">6.4</span> Huge Oracle</h2>
 <p>Sees further into the future by aggregating tickets and people.</p>
 <p>Connects customers and suppliers in a single system where estimation is transparent.</p>
-<p>Unified contract process for large and small scale activities.</p>
-<p>Start with a “parent” field in tickets which identifies the ticket that motivated this one.</p>
+<p>Trees of goals and teams.</p>
+<p>Unified contracting process for large and small scale activities.</p>
+<p>3D Visualisation with axes: X=time, Y=team, Z=goal. Collapsible tree levels.</p>
 <h1 data-number="7" id="development"><span class="header-section-number">7</span> Development</h1>
 <p>Must retain devs (might take several years to ramp up newbies.)</p>
 <p>Devs have lots to do besides chasing deadlines:</p>
 <ul>
-<li>Meetings</li>
+<li>Admin meetings</li>
+<li>Ticket refinement</li>
 <li>Architecture planning</li>
 <li>Bug triage and fix</li>
 <li>Devops, build train</li>
 <li>Customer support</li>
-<li>Data curation?</li>
+<li>Emergency response</li>
+<li>Coordinating with partner companies</li>
+<li>Data curation</li>
 <li>Tech debt reduction, unit testing</li>
 <li>Tech lead duties (if they exist)</li>
 <li>Code reviews</li>
+<li>Debating coding standards</li>
 <li>One to ones</li>
-<li>Documenting code</li>
-<li>Helping newbies</li>
-<li>Marking recruitment tests</li>
 <li>Performance reviews</li>
+<li>Documenting code, runbooks</li>
+<li>Helping newbies, mentoring</li>
+<li>Writing and marking recruitment tests</li>
 <li>Guilds?</li>
 </ul>
 <p>Therefore, much less than 50% of dev time will go on feature development.</p>
