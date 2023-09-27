@@ -106,13 +106,14 @@ var root = {
   },
   Experience : [
     {
+      Type: "C",
       Who: "tiko Energy Solutions AG",
       Sector: "Energy demand regulation",  
       Where: "Zürich, CH",
-      Activities: "Haskell Development Contractor",
+      Activities: "Haskell Developer",
       Technologies: "Haskell, Java, Microservices, Nix, Docker, Kubernetes, Kibana, Grafana, Prometheus, Thrift, Kafka, MQTT, Protobuf",
       From: [2022, 7],
-      To: [2023, 6],
+      To: [2023, 7],
       Achievements: [
 				"Fixed self-releasing memory leak in Kafka's Haskell bindings by manually instrumenting rdkafka.",
 				"Built a generally useful HaXml wrapper to defang its numerous inconveniences.",
@@ -131,6 +132,7 @@ var root = {
       Conclusion: "Enough coders had been recruited by the end of the contract."
     },
     {
+      Type: "P",
       Who: "Tracsis PLC",
       Sector: "Rail",  
       Where: "Leeds, UK",
@@ -156,6 +158,7 @@ var root = {
         <p>One day, the Goliath of rail software made a serious attack on Tracsis by bundling an obligatory update of a product for a task they dominate (fleet) with another product for a task where we dominate (OTD). In response, we had to form a partnership and interface with a competing fleet product. Lots of meetings were held to brainstorm about how to do this until I heard that the deadline before the Goliath would switch off their pre-update system was only four months away. I responded with a Gantt chart proving that we had long since missed the boat. That precipitated some coding and volunteered me for the leadership of the project. We completed it in time by culling all superfluous features, and the customer chose our solution and declined the Goliath's update."
     },
     {
+      Type: "P",
       Who: "Red Embedded Consulting Ltd",
       Sector: "Set top boxes",  
       Where: "Shipley, UK",
@@ -173,6 +176,7 @@ var root = {
 			Long: "After a brief technical inception phase I took leadership of the main bug fixing team serving Red's biggest client: a large US satellite TV provider. The existing methodology made it far from obvious which bugs the team should prioritise, and indeed the criteria changed frequently, so I wrote a web app that pulled data from Jira's REST API and presented it according to easily editable rules. To this I added an automated scrumboard to coordinate progress on the tickets. Later, when the client demanded more detail in timesheets, my team was already collecting all the required data through these tools. Many bugs were intially considered beyond Red's competence, but I often found out why and brought them into our scope e.g. by recommending hardware purchases. <p>On one occasion the client asked for 'throughput' data about bugs. This was not clearly defined but I mined the bug database for the state transistions of thousands of bugs and drew them on a graphic that showed that some recently invented burocracy was causing many good patches to fall by the wayside. I wrote several tools to help the team analyse bugs, including:<ul><li>a heap analyser that helped analyse crashes in innocent code resulting from a prior thread having corrupted the heap,<li>a java deadlock analyser that reduced long kill dumps to a concise description of any deadlock,<li>a thing for reading log files polluted with ad-hoc data, characterising the entries into a meaningful set of types and showing only the first occurrence of each type, which solved lots of formerly intractable bugs,<li>a code change correlation detector which flagged up otherwise undetectable dependencies between source files or functions by looking for their historical tendency to change together in a single commit,<li>a test script compiler to eliminate tedious and error-prone repetitiveness. </ul><p>On the strength of this lateral thinking I was appointed Product Owner of a newly formed SAFe scrum team working in increments of 4 sprints, each sprint being 3 weeks. My role was to liase with the chief architect of said satellite TV provider about requirements and write stories for the team to implement. The first job was to disable some user experiences under conditions of high load due to an ostensible shortage of memory. A full increment was planned to deal with all the usability issues and edge cases arising from this plan. However, I quickly saw the flaw in their memory calculations, directed the team to make better ones and presented the findings in the sprint 1 demo. As a consequence, the client made the rational decision to abort that erosion of the user experience and we spent the rest of the increment on a mixture of bug fixing and proposing projects for the future.<p> In the next increment, the stated goal was to work on a notoriously complex reporting mechanism and equip it with an output to a third party big data hosting service called New Relic. I gradually persuaded the client that it would be easier to implement an entirely new mechanism, and that it could have such a simple data gathering interface that far more data would enter the system than in the old system where injection of data involves a very complex interaction with the central component. Further advantages were that the new system burdenned the data providers with very little performance impact or regression risk. This new system was implemented within an increment and duplicated most of the purposes of the old system which had been four years in the making. The remaining functions will be achieved during the present increment and the client intends to retire the old system entirely. Furthermore, there is now a company-wide directive in place requiring all teams to send evidence of business benefit into our mechanism. That would have been prohibitively arduous and regression-prone in the old system."
 		},
     {
+      Type: "V",
       Who: "Open Source Volunteering",
       Sector: "Web programming",  
       Where: "Taipei",
@@ -187,6 +191,7 @@ var root = {
 			Long: "This library (<a href='https://github.com/adrianmay/rhaboo'>https://github.com/adrianmay/rhaboo</a>) provides persistence for Javascript programmers with the minimum learning curve. The programmer declares ordinary JS objects with a certain constructor: <span style='font-family: courier;'>var mystore = new Rhaboo.Persistent('unique name')</span>, and these persist with almost no further action on the programmer's part. Nested objects and arrays are supported. The only discomfort for the programmer is that because one cannot override assignment to newly invented properties of a known object, i.e., one cannot change the behaviour of <span style='font-family: courier;'>a.b=c</span> if b is something new, these assignments must be performed with <span style='font-family: courier;'>a.write('b', c)</span> instead. The performance is excellent because it does not simply stringify and parse the entire persistent set as most such libraries do. <p>For another Javascript sample, see the source of this CV. <p>During this time I have also been negotiating my self-drafted patent on a browser and search engine with the USPTO. ", 
     },
     {
+      Type: "V",
       Who: "Quorve Media Ltd",
       Sector: "Android Apps",  
       Where: "Taipei",
@@ -206,6 +211,7 @@ var root = {
       }
     },
     {
+      Type: "P",
       Who: "Oregan Networks",
       Sector: "Set top boxes",
       Where: "Taipei",
@@ -234,6 +240,7 @@ var root = {
       }
     },
     {
+      Type: "P",
       Who: "Mycom International",
       Sector: "Telco network monitoring",
       Where: "Taipei",
@@ -253,6 +260,7 @@ var root = {
       }
     },
     {
+      Type: "P",
       Who: "Jabil Circuit",
       Sector: "Electronic Manufacturing",
       Where: "Taipei",
@@ -273,6 +281,7 @@ var root = {
       }
     },
     {
+      Type: "CP",
       Who: "TTPCom / Motorola",
       Sector: "Mobile phone OS",
       Where: {en:"Cambridge (UK), Taipei", cn:"Cambridge (UK), 台北"},
@@ -295,6 +304,7 @@ var root = {
       }
     },
     {
+      Type: "C",
       Who: "ACIS Research",
       Sector: "GPS Bus Tracking",
       Where: "Cambridge (UK)",
@@ -319,6 +329,7 @@ var root = {
       }
     },
     {
+      Type: "C",
       Who: "Suncorp Research",
       Sector: "VOIP",
       Where: "Aldershot (UK)",
@@ -337,6 +348,7 @@ var root = {
       }
     },
     {
+      Type: "C",
       Who: "Blue Cell Networks",
       Sector: "Bluetooth",
       Where: "Bamberg, Germany",
@@ -367,6 +379,7 @@ var root = {
       ],
     },
     {
+      Type: "C",
       Who: "Siemens Power Generation",
       Sector: "Power Station Construction",
       Where: "Erlangen, Germany",
@@ -391,6 +404,7 @@ var root = {
       }
     },
     {
+      Type: "C",
       Who: "Siemens Centre of E-Excellence",
       Sector: "e-Commerce",
       Where: "Erlangen, Germany",
@@ -411,6 +425,7 @@ var root = {
       }
     },
     {
+      Type: "V",
       Who: "Stone Age Software",
       Sector: "Palm programming",
       Where: "Bamberg, Germany",
@@ -433,6 +448,7 @@ var root = {
       }
     },
     {
+      Type: "C",
       Who: "Siemens Automation and Drives",
       Sector: "Heavy Industry",
       Where: "Nuernberg, Germany",
@@ -455,6 +471,7 @@ var root = {
       }
     },
     {
+      Type: "C",
       Who: "Freund & Dirks",
       Sector: "Training",
       Where: "Frankfurt, Germany",
@@ -473,6 +490,7 @@ var root = {
       }
     },
     {
+      Type: "C",
       Who: "Various",
       Sector: "Software",
       Where: "UK, Germany",
@@ -495,6 +513,7 @@ var root = {
       }
     },
     {
+      Type: "S",
       Who: "Royal Aerospace Establishment",
       Sector: "Aerospace ",
       Where: "Farnborough (UK)",
@@ -667,6 +686,15 @@ function render(root, path) {
     }},
   }
 
+
+  var employmentTypes = {
+    "C": "Contract",
+    "P": "Permanent",
+    "CP": "Contract then Perm",
+    "V": "Voluntary",
+    "S": "Sponsorship"
+  }
+
   //Kinda like a rudimentary XSL transform...
   var renderers = {
     'Introduction': function(root) {
@@ -685,7 +713,8 @@ function render(root, path) {
         return foreach(root, function (k) {
           return el('table', { width:'90%', class:"boxlet" }, el('tr', { class: (which==k ? "sel" : ""), onClick: 'setPath(["Experience","'+k+'"]);'}, 
               el('td', { width:'40%'}, (root[k].Who || "") + (root[k].Sector ? " (" + root[k].Sector + ")" : "") ) +
-              el('td', { width:'30%'}, local(root[k].Activities)) +
+              el('td', { width:'10%'}, employmentTypes[root[k].Type]) +
+              el('td', { width:'20%'}, local(root[k].Activities)) +
               el('td', { width:'30%', style:"text-align:right;"}, local(root[k].Where) + ", " + (myFormatDate(root[k].From)()) + " - " + (myFormatDate(root[k].To))()) +
               "" ) ) + 
             ( which==k ?  
