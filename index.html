@@ -67,11 +67,11 @@ var root = {
     Introduction : `<ul>
        <li>Coding since age 10. <br/>
        <li>Studied physics at Oxford University and \"Intelligent Systems\" at Brunel University. <br/>
-       <li>Decades of experience as polyglot coder. <br/>
+       <li>Decades of experience as polyglot coder, currently emphasising Haskell, Python and C. <br/>
        <li>Experience and certification in cloud computing on AWS. <br/>
        <li>MIT professional training in data science and engineering, machine learning, AI and big data. (In progress.) <br/>
        <li>Line management experience with modern leadership philosophy. <br/>
-       <li>Pragmatic, non-dogmatic, case-based approach to decisions. <br/>
+       <li>Pragmatic, non-dogmatic, case-based and business orientated approach to decisions. <br/>
         </ul> `,
 
 //  Introduction : `As a leader of software developers I'm guided by the following values:<ul>
@@ -93,24 +93,22 @@ var root = {
       en: "1992-93: M.Sc. Intelligent Systems (AI + Cognitive Psychology)<br/>Dissertation: invented an entirely new class of neural networks for unsupervised learning of homeostatic behaviours, and pointed out analogies with evolution, sociology and psychology. ",
       cn: "人工智慧系統碩士 (人工智慧+認知心理學) <br/>碩士論文： 發明一套全新的unsupervised learning of homeostatic behaviours的神經網絡。指出其與進化，社會學和心裡學的類比關係。"
     },
-    'MIT Professional Certificate Program in Machine Learning & Artificial Intelligence' : { en: "Currently pursuing the course described <a href='https://professional.mit.edu/course-catalog/professional-certificate-program-machine-learning-artificial-intelligence-0'>here</a>. Finishes late February 2024. The curriculum includes statistics, python and its ML libraries, supervised and unsupervised learning, decision trees, time series, deep learning, LLMs, recommendation systems, big data and business aspects of AI."}, 
+    'MIT Professional Certificate Program in Machine Learning & Artificial Intelligence' : { en: "Currently pursuing the course described <a href='https://professional.mit.edu/course-catalog/professional-certificate-program-machine-learning-artificial-intelligence-0'>here</a>. Finishes late February 2024. The curriculum includes statistics, python and its ML libraries, graph analysis, supervised and unsupervised learning, decision trees, time series, deep learning, LLMs, recommendation systems, big data and business aspects of AI."}, 
     'AWS Certified Cloud Practitioner': { en: 'Official badge <a href="https://www.credly.com/badges/a9590a10-e1a2-48a0-92e0-52c3bb84a885/public_url">here</a>.'},
     'Team Leadership Training': { en: "TQUK Level 2 Certificate in Principles of Team Leading"},
   },
   Skills : {
 		'Roles': "Coder, Tech Lead, Scrum PO, Department Manager",
     'Programming' : "Haskell, C/C++, Java, Python, Bash etc, SQL, Forth, Prolog, OpenGL, Nasm", 
-    'ML/AI' : "numpy, pandas, seaborn, scipy, scikit-learn, opencv, cuda", 
+    'ML/AI libraries' : "numpy, pandas, seaborn, scipy, scikit-learn, opencv, cuda, more in progress", 
     'Cloud': "AWS Certified Cloud Practitioner, Microservices, Docker, Kubernetes, Argo, Thrift, Kafka, MQTT, Protobuf, Kibana, Grafana, Prometheus",
     'Web' : "HTML5, JS, Node, CSS3, jQuery, XSLT, React, Angular, Vue",
     'Process' : "Scrum/SAFe, Jira, Confluence, Git(lab), Mercurial, ClearCase, Perforce, Subversion, CVS",
     'OS' : "Linux, Nix, Android, Windows",
-    'Hardware' : "PC, STB, Intel, 68k, ARM (inc M3), MSP430, PIC",
     Communication : {
       en: "Fluent English & German, some Mandarin and French.",
       cn: "英文和德文流利,中文持續進步中,法文-基本。"
     },
-
   },
   Experience : [
     {
@@ -134,7 +132,7 @@ var root = {
         "Removed lots of partial functions.",  
         "Argued against established reluctance to import thrift-generated types.",  
         "Designed an anti-spoofing solution using EMQX ACLs.",
-        "Blamed the inefficiency of prometheus Z-testing on the lack of an online algorithm for exponentially weighted running mean and variance and found a suitable algorithm."  
+        "Blamed the inefficiency of Prometheus Z-testing on the lack of an online algorithm for exponentially weighted running mean and variance and found a suitable algorithm."  
 			],
       Long: "This was a one-year contract to cover a shortage of permanent Haskell coders.",  
       Conclusion: "Enough coders had been recruited by the end of the contract."
@@ -158,7 +156,7 @@ var root = {
         "Several deep refactorings.",
 				"Designed a system to predict ticket completion dates."
 			],
-      Conclusion: { en: "Returned to my contracting roots", cn: "持續進行中"}, 
+      Conclusion: { en: "Concerned about viability of codebase and impact of Covid on rail industry", cn: "持續進行中"}, 
       Long: "Having fallen in love with Haskell sometime around 2000 and used it for hobby and side projects at work ever since, I jumped at this chance to work not only full time with Haskell but also for a company that had the courage to adopt it. \
         <p>I learned a great deal from the exposure to a large, high-availability, web-based product (e.g. the sensitivity of performance issues in Haskell) but also retained my existing belief in minimalist coding and conciseness of data. My style has evolved into one where I try to get work done by the standard classes and avoid developing lock-in frameworks. This is a key point of the 1:1 tutorial series I developed for Haskell newcomers.\
         <p>The setup of Tracsis' development environment was a complex and barely reproducible procedure, so I wrote a docker-compose file to house all the auxilliary processes whilst the main web server continues to run on the host and is in any case made reproducible by stack.\
@@ -687,7 +685,7 @@ function render(root, path) {
         derefview(renderer[r = path.shift()]) (root[r], path); //Recurse into relevant view mode with decapitated root and path
     }},
     Printable: function (root) { return function (renderer) {
-        return el('p', { style:'text-align:center' }, 'Please see interactive version <a href="https://adrianmay.github.io">here</a>.') + foreach(renderer, function(k) {
+        return el('p', { style:'text-align:center' }, 'Please see the interactive version of this CV at <a href="https://adrianmay.github.io">https://adrianmay.github.io</a>.') + foreach(renderer, function(k) {
           return "" + 
             el('h3', { }, localKey(k)) +
             derefview(renderer[k]) (root[k]); //Decapitate root but path irrelevant in printable mode anyway
