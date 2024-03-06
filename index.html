@@ -64,17 +64,17 @@ var root = {
     Relationship: "Former Sector Lead",
     Contact: "robertsaraka@yahoo.com" },
   ],
-    Introduction : `<ul>
+    Summary : `<ul>
        <li>Coding since age 10. <br/>
-       <li>Studied physics at Oxford University and \"Intelligent Systems\" at Brunel University. <br/>
-       <li>Decades of experience as polyglot coder, currently emphasising Haskell, Python and C. <br/>
-       <li>Experience and certification in cloud computing on AWS. <br/>
-       <li>MIT professional training in data science and engineering, machine learning, AI and big data. (In progress.) <br/>
+       <li>Studied physics at Oxford University, \"Intelligent Systems\" at Brunel University, and recently completed a professional training in Machine Learning and Artificial Intelligence from MIT. <br/>
+       <li>Decades of experience as polyglot coder, currently emphasising Haskell, Python and OO. <br/>
+       <li>Cloud Experience and AWS certification. <br/>
        <li>Line management experience with modern leadership philosophy. <br/>
-       <li>Pragmatic, non-dogmatic, case-based and business orientated approach to decisions. <br/>
+       <li>Many examples of initiative and creative problem solving. <br/>
+       <li>Pragmatic, case-based and business orientated approach to decisions. <br/>
         </ul> `,
 
-//  Introduction : `As a leader of software developers I'm guided by the following values:<ul>
+//  Summary : `As a leader of software developers I'm guided by the following values:<ul>
 //    <li> Base working culture on Employee Engagement principles.
 //    <li> Estimate implementation times objectively by data mining ticket records and source control.
 //    <li> Only implement what is in the interests of both the supplier and the customer: negotiate hard for simple requirements.
@@ -90,17 +90,17 @@ var root = {
       cn: "物理學士"
     },
     'Brunel University' : {
-      en: "1992-93: M.Sc. Intelligent Systems (AI + Cognitive Psychology)<br/>Dissertation: invented an entirely new class of neural networks for unsupervised learning of homeostatic behaviours, and pointed out analogies with evolution, sociology and psychology. ",
+      en: "1992-93: M.Sc. Intelligent Systems (AI + Cognitive Psychology)<br/>Dissertation: invented a new class of neural networks for unsupervised learning of homeostatic behaviours, and pointed out analogies with evolution, sociology and psychology. ",
       cn: "人工智慧系統碩士 (人工智慧+認知心理學) <br/>碩士論文： 發明一套全新的unsupervised learning of homeostatic behaviours的神經網絡。指出其與進化，社會學和心裡學的類比關係。"
     },
-    'MIT Professional Certificate Program in Machine Learning & Artificial Intelligence' : { en: "Currently pursuing the course described <a href='https://professional.mit.edu/course-catalog/professional-certificate-program-machine-learning-artificial-intelligence-0'>here</a>. Finishes late February 2024. The curriculum includes statistics, python and its ML libraries, graph analysis, supervised and unsupervised learning, decision trees, time series, deep learning, LLMs, recommendation systems, big data and business aspects of AI."}, 
-    'AWS Certified Cloud Practitioner': { en: 'Official badge <a href="https://www.credly.com/badges/a9590a10-e1a2-48a0-92e0-52c3bb84a885/public_url">here</a>.'},
     'Team Leadership Training': { en: "TQUK Level 2 Certificate in Principles of Team Leading"},
+    'AWS Certified Cloud Practitioner': { en: 'Official badge <a href="https://www.credly.com/badges/a9590a10-e1a2-48a0-92e0-52c3bb84a885/public_url">here</a>.'},
+    'Massachusetts Institute of Technology': { en: "Completed the 'MIT Applied Data Science Program: Leveraging AI for Effective Decision-Making' course described <a href='https://professional.mit.edu/course-catalog/applied-data-science-program-leveraging-ai-effective-decision-making'>here</a>. Awaiting grades. The curriculum includes statistics, python and its ML libraries, graph analysis, supervised and unsupervised learning, decision trees, time series, deep learning, LLMs, recommendation systems, big data (elective) and business aspects of AI."}, 
   },
   Skills : {
-		'Roles': "Coder, Tech Lead, Scrum PO, Department Manager",
-    'Programming' : "Haskell, C/C++, Java, Python, Bash etc, SQL, Forth, Prolog, OpenGL, Nasm", 
-    'ML/AI libraries' : "numpy, pandas, seaborn, scipy, scikit-learn, opencv, cuda, more in progress", 
+		'Roles': "Coder, Data Scientist, Tech Lead, Scrum PO, Department Manager",
+    'Programming' : "Haskell, Python, C/C++, Java, Bash etc, SQL, Polyglot / Functional Programming (FP)", 
+    'ML/AI libraries' : "numpy, pandas, seaborn, scipy, scikit-learn, tensorflow, keras, surprise, opencv, cuda", 
     'Cloud': "AWS Certified Cloud Practitioner, Microservices, Docker, Kubernetes, Argo, Thrift, Kafka, MQTT, Protobuf, Kibana, Grafana, Prometheus",
     'Web' : "HTML5, JS, Node, CSS3, jQuery, XSLT, React, Angular, Vue",
     'Process' : "Scrum/SAFe, Jira, Confluence, Git(lab), Mercurial, ClearCase, Perforce, Subversion, CVS",
@@ -112,12 +112,35 @@ var root = {
   },
   Experience : [
     {
+      Type: "E",
+      Who: "Massachusetts Institute of Technology",
+      Sector: "University",
+      Where: "Remote",
+      Activities: "Student on Applied Data Science Program: Leveraging AI for Effective Decision-Making",
+      Achievements: ["Helped other students by drilling into incompletely tutored material", "Project: Emotion detection from facial images with CNNs. I achieved 75% accuracy by the unusual method of using just the first half of the convolutional layers of a pre-trained network and adding my own trainable convolutional blocks and a classifier: <a href='Facial_Emotion_Detection.html'>Jupyter Notebook</a>"], 
+      From: [2023, 11],
+      To: [2024, 2],
+      Technologies: [
+        "Python data science and AI libraries (numpy, pandas, seaborn, scipy, scikit-learn, tensorflow, keras, surprise)",
+        "Statistics, Exploratory Data Analysis, Visualization (PCA, MDS and t-SNE)",
+        "Various clustering methods",
+        "K-Means, DBSCAN, Gaussian Mixture Model",
+        "Graphs inc. clustering",
+        "Regression, Cross Validation and Bootstrapping, Classification",
+        "Decision Trees, Random Forest, Time Series",
+        "Neural Networks, Deep Learning, CNNs, GNNs, LLMs",
+        "Recommendation Systems"
+			],
+      Long:"",  
+      Conclusion: ""
+    },
+    {
       Type: "C",
       Who: "tiko Energy Solutions AG",
       Sector: "Energy demand regulation",  
       Where: "Zürich, CH",
       Activities: "Haskell Developer",
-      Technologies: "Haskell, Java, Microservices, Nix, Docker, Kubernetes, Kibana, Grafana, Prometheus, Thrift, Kafka, MQTT, Protobuf",
+      Technologies: ["Haskell, Java, Microservices, Nix, Docker, Kubernetes, Kibana, Grafana, Prometheus, Thrift, Kafka, MQTT, Protobuf"],
       From: [2022, 7],
       To: [2023, 7],
       Achievements: [
@@ -143,7 +166,7 @@ var root = {
       Sector: "Rail",  
       Where: "Leeds, UK",
       Activities: "Haskell Development Team Leader",
-      Technologies: "Haskell, Yesod, JS, Vue, Linux, Amazon AWS, hg, git, Jira",
+      Technologies: ["Haskell, Yesod, JS, Vue, Linux, Amazon AWS, hg, git, Jira"],
       From: [2019, 3],
       To: [2022, 6],
       Achievements: [
@@ -169,7 +192,7 @@ var root = {
       Sector: "Set top boxes",  
       Where: "Shipley, UK",
       Activities: "Team Leader then Scrum PO",
-      Technologies: "C++, Java, buildroot, hg, Jira, jq, Unix tools, Haskell, Latex, HTML, CSS, SVG",
+      Technologies: ["C++, Java, buildroot, hg, Jira, jq, Unix tools, Haskell, Latex, HTML, CSS, SVG"],
       From: [2015, 10],
       To: [2019, 2],
       Achievements: [
@@ -187,7 +210,7 @@ var root = {
       Sector: "Web programming",  
       Where: "Taipei",
       Activities: "Programmer",
-      Technologies: "Javascript, QUnit, GitHub, Grunt, Browserify",
+      Technologies: ["Javascript, QUnit, GitHub, Grunt, Browserify"],
       From: [2014, 7],
       To: [2015, 10],
       Achievements: [
@@ -202,7 +225,7 @@ var root = {
       Sector: "Android Apps",  
       Where: "Taipei",
       Activities: "Entrepreneur",
-      Technologies: "OpenGL, Java, Android, C",
+      Technologies: ["OpenGL, Java, Android, C"],
       From: [2013, 11],
       To: [2015, 10],
       Achievements: [
@@ -222,7 +245,7 @@ var root = {
       Sector: "Set top boxes",
       Where: "Taipei",
       Activities: "Software Development Manager",
-      Technologies: "C++, Embedded linux, various video streaming and DRM protocols",
+      Technologies: ["C++, Embedded linux, various video streaming and DRM protocols"],
       From: [2012, 3],
       To: [2013, 10],
       Achievements: [ 
@@ -251,7 +274,7 @@ var root = {
       Sector: "Telco network monitoring",
       Where: "Taipei",
       Activities: "Software Development Manager",
-      Technologies: "Java, Ant, XSL, XML, Python, Perforce",
+      Technologies: ["Java, Ant, XSL, XML, Python, Perforce"],
       From: [2011, 5],
       To: [2012, 2],
       Achievements: [
@@ -271,7 +294,7 @@ var root = {
       Sector: "Electronic Manufacturing",
       Where: "Taipei",
       Activities: "Programmer, then manager",
-      Technologies: "C/C++, Haskell, Forth, embedded Linux, MSP430, Coldfire, PIC, ZigBee, git",
+      Technologies: ["C/C++, Haskell, Forth, embedded Linux, MSP430, Coldfire, PIC, ZigBee, git"],
       From: [2009, 1],
       To: [2011, 5],
       Achievements: [
@@ -290,9 +313,9 @@ var root = {
       Type: "CP",
       Who: "TTPCom / Motorola",
       Sector: "Mobile phone OS",
-      Where: {en:"Cambridge (UK), Taipei", cn:"Cambridge (UK), 台北"},
+      Where: "Cambridge (UK) then Taipei",
       Activities: "Programming and analysis",
-      Technologies: "C/C++, embedded ARM, PC, Perforce",
+      Technologies: ["C/C++, embedded ARM, PC, Perforce"],
       From: [2006, 8],
       To: [2009, 1],
       Achievements: [
@@ -315,7 +338,7 @@ var root = {
       Sector: "GPS Bus Tracking",
       Where: "Cambridge (UK)",
       Activities: "Programming, analysis",
-      Technologies: "C/C++/C#, Unix, Windows, Embedded Linux, TCP/IP, Sockets, XML, GPS",
+      Technologies: ["C/C++/C#, Unix, Windows, Embedded Linux, TCP/IP, Sockets, XML, GPS"],
       From: [2006, 1],
       To: [2006, 8],
       Achievements: [
@@ -340,7 +363,7 @@ var root = {
       Sector: "VOIP",
       Where: "Aldershot (UK)",
       Activities: "Requirements engineering",
-      Technologies: "Linux, C++, WiFi, VoIP, SIP/H323/RTP, Qt/Qtopia, UML, Visio",
+      Technologies: ["Linux, C++, WiFi, VoIP, SIP/H323/RTP, Qt/Qtopia, UML, Visio"],
       From: [2005, 6],
       To: [2005, 12],
       Achievements: [
@@ -359,7 +382,7 @@ var root = {
       Sector: "Bluetooth",
       Where: "Bamberg, Germany",
       Activities: "Linux admin & programming",
-      Technologies: "Linux, C, Perl, Bash, Bluetooth, GSM, GPRS, ISDN, J2ME, Subversion, UML",
+      Technologies: ["Linux, C, Perl, Bash, Bluetooth, GSM, GPRS, ISDN, J2ME, Subversion, UML"],
       From: [2004, 10],
       To: [2005, 5],
       Achievements: [
@@ -391,7 +414,7 @@ var root = {
       Sector: "Power Station Construction",
       Where: "Erlangen, Germany",
       Activities: "Asset harmonisation, Project portfolio planning",
-      Technologies: "Word, Powerpoint",
+      Technologies: ["Word, Powerpoint"],
       From: [2001, 11],
       To: [2003, 11],
       Achievements: [
@@ -416,7 +439,7 @@ var root = {
       Sector: "e-Commerce",
       Where: "Erlangen, Germany",
       Activities: "Project leader",
-      Technologies: "RUP, UML, Rational Rose, IBM WebSphere, Crossworlds, Java. ",
+      Technologies: ["RUP, UML, Rational Rose, IBM WebSphere, Crossworlds, Java. "],
       From: [2001, 1],
       To: [2001, 11],
       Achievements: [
@@ -437,7 +460,7 @@ var root = {
       Sector: "Palm programming",
       Where: "Bamberg, Germany",
       Activities: "Start-up",
-      Technologies: "Palm, LAMP",
+      Technologies: ["Palm, LAMP"],
       From: [2000, 3],
       To: [2000, 12],
       Achievements: [
@@ -460,7 +483,7 @@ var root = {
       Sector: "Heavy Industry",
       Where: "Nuernberg, Germany",
       Activities: "Architecture, coding",
-      Technologies: "Microsoft C++, MFC, COM, ATL, Solaris, Intel, ARM, Profibus, C++, DCOM, Clearcase, UML.",
+      Technologies: ["Microsoft C++, MFC, COM, ATL, Solaris, Intel, ARM, Profibus, C++, DCOM, Clearcase, UML."],
       From: [1997, 2],
       To: [2000, 3],
       Achievements: [
@@ -483,7 +506,7 @@ var root = {
       Sector: "Training",
       Where: "Frankfurt, Germany",
       Activities: "Seminar Leader",
-      Technologies: "C++, Design Patterns",
+      Technologies: ["C++, Design Patterns"],
       From: [1997, 1],
       To: [1997, 2],
       Achievements: [
@@ -502,7 +525,7 @@ var root = {
       Sector: "Software",
       Where: "UK, Germany",
       Activities: "Contract programming",
-      Technologies: "C++, Delphi, Basic, some electronics",
+      Technologies: ["C++, Delphi, Basic, some electronics"],
       From: [1993, 11],
       To: [1996, 12],
       Achievements: [
@@ -525,7 +548,7 @@ var root = {
       Sector: "Aerospace ",
       Where: "Farnborough (UK)",
       Activities: "Research",
-      Technologies: "C, Fortran",
+      Technologies: ["C, Fortran"],
       From: [1988, 9],
       To: [1991, 6],
       Achievements: [
@@ -545,7 +568,7 @@ var root = {
 
 //The only state variables...
 //var path = ['Experience', 0];
-var path = ['Introduction'];
+var path = ['Summary'];
 var lang = 'en';
 var view = 'Interactive';
 
@@ -615,7 +638,7 @@ var keyTranslations = {
     DOB: "生日",
     Phone: "電話",
     Company: "公司",
-    Introduction: "自傳",
+    Summary: "自傳",
     Printable: "列印模式",
     Interactive: "互動",
     Skills: "技能",  
@@ -700,12 +723,13 @@ function render(root, path) {
     "CP": "Contract then Perm",
     "V": "Voluntary",
     "S": "Sponsorship",
+    "E": "Education",
     "X": ""  
   }
 
   //Kinda like a rudimentary XSL transform...
   var renderers = {
-    'Introduction': function(root) {
+    'Summary': function(root) {
       return indent(el('p', { }, local(root)));
     },
     'Skills': function(root) {
@@ -728,10 +752,9 @@ function render(root, path) {
             ( which==k ?  
                 function(e1) {
                   return e1 ? indent(
-                    definition(e1, 'Technologies', local) +
+                    definition(e1, 'Technologies', localarraybullets) +
                     definition(e1, 'Achievements', localarraybullets) +
-                    (e1.Long!==undefined ? el('p', { }, local(e1.Long)) : "") +
-                    definition(e1, 'Conclusion', local) + "<br/>"
+                    (e1.Long!==undefined ? el('p', { }, local(e1.Long)) : "") + "<br/>"
                   ) : "";
                 } ( root[path[0]] ) 
             : "" ); 
@@ -741,14 +764,14 @@ function render(root, path) {
         return foreach(root, function(k) {
           return "" +
             el('table', { width:'90%'}, el('tr', { }, el('td', { }, 
-                el('h4', { },    ( root[k].Who ?  root[k].Who + " (" + root[k].Sector + ") <br/> " : ""  )   + local(root[k].Activities)) 
+                el('h4', { },    ( root[k].Who ?  root[k].Who + ", " + root[k].Where + " <br/> " : ""  )   + local(root[k].Activities)) 
               ) + el('td', { style:'text-align:right;'}, 
-                el('p', { }, local(root[k].Where) + ", " + (myFormatDate(root[k].From)()) + " - " + (myFormatDate(root[k].To))()) 
+                el('p', { }, (myFormatDate(root[k].From)()) + " - " + (myFormatDate(root[k].To))()) 
               ) )) +
-            definition(root[k], 'Technologies', local) +
+            definition(root[k], 'Sector', local) +
+            definition(root[k], 'Technologies', localarraybullets) +
             definition(root[k], 'Achievements', localarraybullets) +
             ( root[k].Long ? el('p', { width: '100%' }, local(root[k].Long)) : "" ) +
-            definition(root[k], 'Conclusion', local) +
             "<hr/>";
         }) + "<div class='pagebreak'> </div>" ;
       }
