@@ -721,8 +721,7 @@ function render(root, path) {
             el('div', {class:'button viewbutton', onClick:'toggleView();'}, localKey(otherview())) ) + 
           el('td', {  style:'text-align:center' }, 
             el('h2', {}, local(root.Title)) ) + 
-          el('td', { width:'20%' }, 
-            el('div', {class:'button langbutton', onClick:'toggleLanguage();'}, unlocalKey(otherlang())) ) 
+          el('td', { width:'20%' }, "" ) 
         )) +
         el('h1', {}, local(root.Name)) +
         el('h2', {}, local(root.Job)) +
