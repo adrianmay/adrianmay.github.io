@@ -100,15 +100,12 @@ var root = {
   Skills : {
 		'Roles': "Coder, Data Scientist, Tech Lead, Scrum PO, Department Manager",
     'Programming' : "Haskell, Python, C/C++, Java, Bash etc, SQL, Polyglot / Functional Programming (FP)", 
+    'Web' : "HTML, CSS, JS, Node, jQuery, XSLT, React, Angular, Vue",
+    'Cloud': "AWS (Certified Cloud Practitioner, EC2, Lambda, API Gateway, IAM, Dynamo, CloudFormation, CDK, SST), Microservices, Docker, Kubernetes, Argo, Thrift, Kafka, MQTT, Protobuf, Kibana, Grafana, Prometheus",
     'ML/AI libraries' : "numpy, pandas, seaborn, scipy, scikit-learn, tensorflow, keras, surprise, opencv, cuda", 
-    'Cloud': "AWS Certified Cloud Practitioner, Microservices, Docker, Kubernetes, Argo, Thrift, Kafka, MQTT, Protobuf, Kibana, Grafana, Prometheus",
-    'Web' : "HTML5, JS, Node, CSS3, jQuery, XSLT, React, Angular, Vue",
-    'Process' : "Scrum/SAFe, Jira, Confluence, Git(lab), Mercurial, ClearCase, Perforce, Subversion, CVS",
+    'Process' : "Scrum/SAFe, Jira, Confluence, Git(lab), Mercurial",
     'OS' : "Linux, Nix, Android, Windows",
-    Communication : {
-      en: "Fluent English & German, some Mandarin and French.",
-      cn: "英文和德文流利,中文持續進步中,法文-基本。"
-    },
+    'Communication' : "Fluent English, advanced German",
   },
   Experience : [
     {
@@ -116,10 +113,10 @@ var root = {
       Who: "Git In Straight Lines",
       Sector: "SW development tools",
       Where: "Otley",
-      Activities: "Building and marketing a revolutionary git history graph viewer",
+      Activities: "Building and marketing a revolutionary Git history graph viewer",
       From: [2024, 3],
-      Technologies: ["Haskell, AWS, Git"],
-      Long:"<a href='https://adrianmay.github.io/gisl_ss.png'>Screenshot</a><p>Accurate software development timescale estimation depends on good data, one very important source of which is source control. Unfortunately, git and gitlab encourage developers to discard and distort history in order to ease the pain of reading git history graphs. Instead, this readability problem should be solved in an intelligent viewer.<p>The main reason why git cannot draw history graphs properly is that it fails to associate with each commit the branch that was current when that commit was created. GISL recreates this information and uses a cunning graphical format to draw commits on the same 'branch at the time' in the same column and colour without having to break chronological ordering. <p>If GISL is popular, the next phase would see it grow into a front end for git and jira that encourages estimation-friendly practices, and performs realistic simulations of the development process in order to obtain mathematically correct estimations.",  
+      Technologies: ["Haskell, Git, AWS, Typescript, React, SST"],
+      Long:"<a href='https://adrianmay.github.io/gisl_ss.png'>Screenshot</a><p>Accurate software development timescale estimation depends on good data, one very important source of which is source control. Unfortunately, Git and Gitlab encourage developers to discard and distort history in order to ease the pain of reading Git history graphs. Instead, this readability problem should be solved in an intelligent viewer.<p>The main reason why Git cannot draw history graphs properly is that it fails to associate with each commit the branch that was current when that commit was created. GISL recreates this information and uses a cunning graphical format to draw commits on the same 'branch-at-the-time' in the same column and colour without having to break chronological ordering. This branch-at-the-time inference is also crucial for measuring effort expended on tickets. <p>I'm also building the web presence for this business using SST for the serverless IaC and React for the front end, including credit card billing of subscriptions. <p>If GISL is popular, the next phase would see it grow into a front end for Git and Jira that encourages estimation-friendly practices, and performs realistic simulations of the development process in order to obtain mathematically correct estimations.",  
     },
     {
       Type: "E",
@@ -173,7 +170,7 @@ var root = {
       Sector: "Rail",  
       Where: "Leeds, UK",
       Activities: "Haskell Development Team Leader",
-      Technologies: ["Haskell, Yesod, JS, Vue, Linux, Amazon AWS, hg, git, Jira"],
+      Technologies: ["Haskell, Yesod, JS, Vue, Linux, Amazon AWS, hg, Git, Jira"],
       From: [2019, 3],
       To: [2022, 6],
       Achievements: [
@@ -324,7 +321,7 @@ var old_jobs = [
       Sector: "Electronic Manufacturing",
       Where: "Taipei",
       Activities: "Programmer, then manager",
-      Technologies: ["C/C++, Haskell, Forth, embedded Linux, MSP430, Coldfire, PIC, ZigBee, git"],
+      Technologies: ["C/C++, Haskell, Forth, embedded Linux, MSP430, Coldfire, PIC, ZigBee, Git"],
       From: [2009, 1],
       To: [2011, 5],
       Achievements: [
